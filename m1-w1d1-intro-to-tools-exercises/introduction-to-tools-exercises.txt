@@ -63,7 +63,7 @@ drwxr-xr-x  4 jgill  staff   136 May 21 15:22 src
 5.  What do the "." and ".." folders displayed in the directory listing in
     Exercise 4 represent?
 ----
-. <-- where i accomplished
+. <-- where i am
 ..<-- parent directory
 
 ----
@@ -139,7 +139,11 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 
 $ git add .
-<type or copy-paste the result here>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
 
 $ git commit -m "Good stopping point"
 [master de68bdd] Good stopping point
