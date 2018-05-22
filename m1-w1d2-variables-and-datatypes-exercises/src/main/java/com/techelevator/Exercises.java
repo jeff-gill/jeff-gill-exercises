@@ -2,6 +2,8 @@ package com.techelevator;
 
 public class Exercises {
 
+	private static final char[] meganSeashellsLeftToCollect = null;
+
 	public static void main(String[] args) {
         
         /*
@@ -51,40 +53,66 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods? 
         */
+int raccoonsInTheWoods = 3;
+int raccoonsGoHome = 2;
+int raccoonsLeftInWoods = raccoonsInTheWoods - raccoonsGoHome;
 
         /* 
         4. There are 5 flowers and 3 bees. How many less bees than flowers? 
         */
+int flowers = 5;
+int bees = 3;
+int lessBees = 5-3;
 
         /* 
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now? 
         */
+int lonelyPigeonEatingBreadcrumbs = 1;
+int anotherPigeonEatingBreadcrumbs = 1;
+int totalPigeonsEatingBreadcrums = lonelyPigeonEatingBreadcrumbs + anotherPigeonEatingBreadcrumbs;
 
         /* 
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now? 
         */
+int owlsOnFence = 3;
+int moreOwlsJoin = 2;
+int totalOwlsOnFence = owlsOnFence + moreOwlsJoin;
 
         /* 
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home? 
         */
+int beaversWorkingOnHome = 2;
+int beaversGoingSwimming = 1;
+int remainingBeavers = beaversWorkingOnHome - beaversGoingSwimming;
 
         /* 
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all? 
         */
+int toucansOnLimb = 2;
+int toucansJoingOnLimb = 1;
+int totalToucansOnLimb = toucansOnLimb + toucansJoingOnLimb;
 
-        /* 
+/* 
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts? 
         */
+int squirrelsInTree = 4;
+int nutsInTree = 2;
+int squirrelsLessNutsInTree = squirrelsInTree - nutsInTree;
 
         /* 
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find? 
         */
+int quarter = 25;
+int dime = 10;
+int nickle = 5;
+String mrsHiltsMoney = quarter + dime + (2 * nickle) + " cents";
+
 
         /* 
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
@@ -92,131 +120,208 @@ public class Exercises {
         Mrs. Flannery's class bakes 17 muffins. How many muffins does first
         grade bake in all? 
         */
+int mrsBriersClass = 18;
+int mrsMcadamsClass = 20;
+int mrsFlannerysClass = 17;
+int allFirstGradeClasses = mrsBriersClass + mrsMcadamsClass + mrsFlannerysClass;
 
         /*
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
-        
+int mrsHiltYoyo = 24;
+int mrsHiltWhistle = 14;
+int mrsHiltTwoToys = mrsHiltYoyo + mrsHiltWhistle;
+
         /*
         13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
-        
+      int largeMarshmallows = 8;
+      int smallMarshmallows = 10;
+      int totalMarshmallows = largeMarshmallows + smallMarshmallows;
+     
         /*
         14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
         Elementary School received 17 inches of snow. How much more snow
         did Mrs. Hilt's house have?
         */
-        
+        int mrsHiltHouseSnow = 29;
+        int brecknockSchoolSnow = 17;
+        int snowDifference = mrsHiltHouseSnow - brecknockSchoolSnow;
+       
         /*
         15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
         case. How much money does she have left?
         */
-        
+        int mrsHiltsCash = 10;
+        int toyTruckCost = 3;
+        int pencilCost = 2;
+        int mrsHiltMoneyLeft = mrsHiltsCash - toyTruckCost - pencilCost;
+        		
         /*
         16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
         marbles does he have now?
         */
-        
+        int joshsMarbles = 16;
+        int joshsLostMarbles = 7;
+        int joshsRemaiingMarbles = joshsMarbles - joshsLostMarbles;
+       
         /*
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
-        
+        int meganSeashellsDesired = 25;
+        int meganSeashellsHas = 9;
+        int meganSeashellsLeftToCollect = meganSeashellsDesired - meganSeashellsHas;
+        		
         /*
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
-        
+        int bradsBallons = 17;
+        int bradsRedBallons = 8;
+        int bradsGreenBallons = bradsBallons - bradsRedBallons;
+        	
         /*
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
-        
+        int booksOnShelf = 38;
+        int booksMartaAdds = 10;
+        int newTotalBooks = booksOnShelf + booksMartaAdds;
+       
         /*
         20. A bee has 6 legs. How many legs do 8 bees have?
         */
-        
+        int beesLegs = 6;
+        int totalBeeLegs = 8 * beesLegs;
+     
         /*
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
-        
+       double iceCreamConeCost = 99;
+    	String totalIceCreamConeCost = "$" + (iceCreamConeCost * 2) / 100;
+    	
+
         /*
         22. Mrs. Hilt wants to make a border around her garden. She needs 125
         rocks to complete the border. She has 64 rocks. How many more rocks
         does she need to complete the border?
         */
-        
+        int mrsHiltsRocks = 64;
+        int totalRocksForBorder = 125;
+        int totalMoreRocksNeeded = totalRocksForBorder - mrsHiltsRocks;
+    	
         /*
         23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
         she have left?
         */
+        int mrsHiltsMarbles = 38;
+        int mrsHiltsLostMarbles = 15;
+        int mrsHiltsRemainingMarbles = mrsHiltsMarbles - mrsHiltsLostMarbles;
+
         
         /*
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
         miles and then stopped for gas. How many miles did they have left to drive?
         */
+        int concertDrivingDistance = 78;
+        int droveUntilStopping = 32;
+        int milesRemainingUntilConcert = concertDrivingDistance - droveUntilStopping;
         
         /*
         25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
         morning and 45 minutes shoveling snow on Saturday afternoon. How
         much total time did she spend shoveling snow?
         */
-        
+        double saturdayShovelingTime = 1.5;
+        double sundayShovelingTime = .75;
+        String totalShovelingTime = saturdayShovelingTime + sundayShovelingTime + " hours";
+       
         /*    
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
         money did she pay for all of the hot dogs?
         */
-        
+        int hotDogCost = 5;
+        int mrsHiltHotDogsBaught = 6;
+       
+      
         /*
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
         */
+        int mrsHiltsPencilMoney = 50;
+        int mrsHiltPencilCost = 7;
+        int mrsHiltPencilsBought = mrsHiltsPencilMoney / mrsHiltPencilCost;
         
         /*    
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
         were orange. If 20 of the butterflies were orange, how many of them
         were red?
         */
+        int butterfliesMrsHiltSaw = 33;
+        int buterfliesThatWereOrange = 20;
+        int butterfliesThatWereRed = butterfliesMrsHiltSaw - buterfliesThatWereOrange;
         
         /*    
         29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
         should Kate get back?
         */
-        
+        int katesMoney = 100;
+        		int candyCost = 54;
+        String katesChange = katesMoney - candyCost + " cents";
+      
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
         */
+        int markTreesHas = 13;
+        int markTreesAdd = 12;
+        int totalTrees = markTreesHas + markTreesAdd;
         
         /*    
         31. Joy will see her grandma in two days. How many hours until she sees
         her?
         */
-        
+        int hoursInADay = 24;
+        int joyDaysSeeingGrandma = 2;
+        int hoursUntilGrandmaVisits = hoursInADay * joyDaysSeeingGrandma;
+    
         /*
         32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
         much gum will she need?
         */
+        int kimTotalCousins= 4;
+        int kimGumForEach = 5;
+        int totalKimGumNeeded = kimTotalCousins + kimGumForEach;
         
         /*
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
         left?
         */
+        int dansMoney = 3;
+        int candyBarCost = 1;
+        String danMoneyLeft = "$" +  (dansMoney - candyBarCost);
         
         /*
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
         */
+        int boatsOnLake = 5;
+        int peoplePerBoats = 3;
+        int totalPeopleOnBoats = boatsOnLake * peoplePerBoats;
         
         /*
         35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
         have now?
         */
-        
+        int ellensLegos = 380;
+        int ellensLostLegos = 57;
+        int ellensLegosRemaining = ellensLegos + ellensLostLegos;
+        System.out.println(ellensLegosRemaining);
         /*
         36. Arthur baked 35 muffins. How many more muffins does Arthur have to
         bake to have 83 muffins?
