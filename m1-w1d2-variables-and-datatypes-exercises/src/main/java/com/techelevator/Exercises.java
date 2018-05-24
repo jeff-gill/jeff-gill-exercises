@@ -296,7 +296,7 @@ int mrsHiltTwoToys = mrsHiltYoyo + mrsHiltWhistle;
         */
         int kimTotalCousins= 4;
         int kimGumForEach = 5;
-        int totalKimGumNeeded = kimTotalCousins + kimGumForEach;
+        int totalKimGumNeleded = kimTotalCousins + kimGumForEach;
         
         /*
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
