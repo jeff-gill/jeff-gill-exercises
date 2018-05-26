@@ -37,7 +37,7 @@ public class Fibonacci {
 			if(fib == 0);
 				return (fib[i - 1] +fib[i -2]);
 			if (fib[i] = fibonacciNumber);
-				break;
+				break;  
 		}
 	}
 	}
