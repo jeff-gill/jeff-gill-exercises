@@ -23,11 +23,11 @@ public class LinearConvert {
 	public static void main(String[] args) {
 		Scanner in = new Scanner (System.in);
 		
-		System.out.print("Please neter a length: ");
+		System.out.print("Please enter a length: ");
 		
 		String lengthEntry = in.nextLine();
 		
-		System.out.print("Is the measurement in (m)eter or (f)? ");
+		System.out.print("Is the measurement in (m)eter or (f)eet? ");
 				
 		String choice = in.nextLine().toLowerCase();
 		
