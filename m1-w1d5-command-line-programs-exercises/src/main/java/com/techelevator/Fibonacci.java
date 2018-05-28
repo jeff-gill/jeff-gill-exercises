@@ -17,9 +17,11 @@ that number.
 Please enter the Fibonacci number: 25
  
  0, 1, 1, 2, 3, 5, 8, 13, 21
- */
 public class Fibonacci {
 
+*/
+/*
+ 
 	public static void main(String[] args) {
 		
 		Scanner in = new Scanner (System.in);
@@ -28,16 +30,53 @@ public class Fibonacci {
 		
 		String fibonacciEntry = in.nextLine();
 		
-		int amount = Integer.parseInt(fibonacciEntry);
+		double amount = Double.parseDouble(fibonacciEntry);
 		
 		String outcome = " ";
 		
-		int fib = 0;
-		for (int i=0; i > 0; i++) {
-			if(fib == 0);
-				return (fib[i - 1] +fib[i -2]);
+		for (int i=0; i <= 25; i++) {
+			
+			
+		 amount = 0;
+			if(fibonacciEntry == 0) {
+				return = "0";
+			}
+			if (fibonacciEntry = 1) {
+				return ("0, " + "1");
+			}
+			
 			if (fib[i] = fibonacciNumber);
 				break;  
 		}
 	}
 	}
+		
+*/
+
+public class Fibonacci {
+ 
+	public static void main(String[] args) {
+	
+	Scanner in = new Scanner (System.in); 
+		
+		System.out.print("Please enter the Fibonacci number: ");
+		
+		String fibNumber = in.nextLine();
+		
+		int amount = Integer.parseInt(fibNumber);
+		
+		int i = 1, t1 = 0, t2 = 1;
+		String n = fibNumber;
+
+		while (i <= n)
+        {
+            System.out.print(t1 + ", ");
+
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+
+            i++;
+        }
+    }
+}
