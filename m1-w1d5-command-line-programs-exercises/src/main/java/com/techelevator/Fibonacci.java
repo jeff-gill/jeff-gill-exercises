@@ -68,7 +68,7 @@ public class Fibonacci {
 		int i = 1, t1 = 0, t2 = 1;
 		String n = fibNumber;
 
-		while (i <= n)
+		while (n <= sum)
         {
             System.out.print(t1 + ", ");
 
