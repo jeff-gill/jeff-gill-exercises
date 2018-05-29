@@ -29,6 +29,16 @@ public class DecimalToBinary {
 		System.out.println("Please enter in a series of decimal values (separated by spaces): ");
 		
 		String decimalValues = in.nextLine();
+
+		int[] decimalArray = new int[];
+		
+		int decimalArrayItem = decimalArray[i];
+		
+		int binaryResult = decimalArrayItem * 10;
+		System.out.println(decimalArray[0] + " in binary is " + decimalArrayItem);
+		
+		int deciamlArrayItem = decimalArray[i + 1];
+		
 		
 		String decimalValues = Double.parseDouble(decimalValues.split(" "));
 		
