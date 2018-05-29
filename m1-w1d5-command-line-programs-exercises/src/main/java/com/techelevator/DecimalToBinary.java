@@ -22,14 +22,39 @@ public class DecimalToBinary {
 
 	public static void main(String[] args) {
 
-		Scanner in = new Scanner(System.in);
-		while (true) {
-		
+		Scanner in = new Scanner(System.in);		
 			
 		System.out.println("Please enter in a series of decimal values (separated by spaces): ");
 		
 		String decimalValues = in.nextLine();
 
+		String[] decimalArray = decimalValues.split(" ");
+		
+		for(int i=0; i < decimalArray.length; i++) {
+			
+			int decimalOutput = Integer.parseInt(decimalArray[i]);
+		}
+		
+			for(int i1=0;i1<10;i1++)
+	        {
+	        Object n;
+			int binaryOutput = int (n%2);
+	        int n = n/2;
+	        Integer n = Integer.parseInt(binaryOutput[i1]);
+	        }   
+			
+			
+			System.out.println(decimalOutput + " in binary is " + binaryOutput);
+		
+		}
+
+	}
+	
+		
+		
+		
+		
+		/*
 		int[] decimalArray = new int[];
 		
 		int decimalArrayItem = decimalArray[i];
@@ -52,7 +77,4 @@ public class DecimalToBinary {
 		
 		String [] = str.split(" ") ;
 		*/
-	}
-
-}
-}
+	
