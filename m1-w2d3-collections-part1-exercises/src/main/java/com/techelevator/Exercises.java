@@ -22,7 +22,13 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		
+		List<String> stringList = new ArrayList<String>();
+		
+		for (String str : stringArray) {
+			stringList.add(str);
+		}
+		return stringList;
 	}
 	
 	/*
@@ -43,7 +49,17 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		
+		List<String> no4Letters = new ArrayList<String>();
+		
+		for (String word : stringArray) {
+			if (word.length() != 4) {
+				no4Letters.add(word);
+			}
+		}
+		
+		
+		return no4Letters;
 	}
 
 

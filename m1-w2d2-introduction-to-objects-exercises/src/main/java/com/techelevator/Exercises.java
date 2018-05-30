@@ -305,8 +305,13 @@ public class Exercises {
 	 countXX("xxxx") → 3
 	 */
 	public int countXX(String str) {
-		return 0;
-	}
+			  int count = 0;
+			  for (int i = 0; i < str.length()-1; i++) {
+			    if (str.substring(i, i + 2).equals("xx")) count++;
+			  }
+			  return count;
+			}
+
 
 	/*
 	 Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
@@ -315,9 +320,16 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
-		return false;
+		for(int i = 0; i < str.length() - 1; i++) {
+	        if(str.charAt(i) == 'x') {
+	            if(str.charAt(i + 1) == 'x')
+	                return true;
+	            else
+	                return false;
+	        }
+	    }
+	    return false;
 	}
-
 	/*
 	 Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
 	 stringBits("Hello") → "Hlo"
@@ -325,8 +337,14 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
-	}
+		int bits = str.length();
+		String result = "";
+		for(int i = 0; i < bits; i += 2) {
+	       result += str.charAt(i)	;
+		}  
+	       return result;
+		}
+	           
 
 	/*
 	 Given a non-empty string like "Code" return a string like "CCoCodCode".
@@ -335,8 +353,13 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		return null;
-	}
+		int bits = str.length();
+		String result = "";
+		for(int i = 0; i < bits +1 ; i++) {
+	       result += str.substring(0,i);
+		}  
+	       return result;
+		}
 
 	/*
 	 Given a string, return the count of the number of times that a substring length 2 appears in the string and 
@@ -346,6 +369,14 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
+		int count = 0;
+		  for (int i = 0; i < str.length() - 2; i++) {
+		    if (str.substring(i, i++).equals(str.substring(i - 2))) count++;
+		 
+		  return count;
+		}
+		
+		
 		return 0;
 	}
 
@@ -357,8 +388,15 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
-	}
+		    String answer = "";
+		    for (int i = 0; i < str.length(); i++) {
+		        if (str.substring(i, i++).equals("x") && i != str.length() && i != str.length() - 1) {
+		            answer = answer + "";
+		        }
+		        answer = answer + str.substring(i, i++);
+		    }
+		    return answer;
+		}
 
 	/*
 	 Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
@@ -367,7 +405,13 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+	        String result = "";
+	        for (int i = 0; i < str.length(); i += 4) {
+	            result += str.substring(i);
+	            if (i + 1 < str.length())
+	                result += str.substring(i + 1);
+	        }
+	        return result;
 	}
 
 	/*
@@ -379,7 +423,11 @@ public class Exercises {
 	 */
 
 	public String stringYak(String str) {
-		return null;
+		int bigYak = str.indexOf("yak");
+        while (bigYak != - 1) {
+            str = (str.substring(0, bigYak) + str.substring(bigYak + 3));
+            bigYak = str.indexOf("yak");
+        }
+        return str;
 	}
-	
 }
