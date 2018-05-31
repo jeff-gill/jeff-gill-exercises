@@ -38,7 +38,13 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		
+		String[] stringArray = new String[stringList.size()];
+		
+			for (int i = 0; i < stringList.size() ; i++) {
+				stringArray[i] = stringList.get(i);
+			}
+			return stringArray;
 	}
 	
 	/*
@@ -57,8 +63,6 @@ public class Exercises {
 				no4Letters.add(word);
 			}
 		}
-		
-		
 		return no4Letters;
 	}
 
@@ -72,8 +76,14 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
-	}
+		Stack<String> myStringList = new Stack<String>();
+		for(int i = 0; i < myStringList.size(); i++) {
+			myStringList2 += myStringList.push(i);
+		}
+			System.out.println(myStringList2);
+		}
+		
+	
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -82,8 +92,17 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
-	}
+		
+		List<Double> times2List = new ArrayList<Double>();
+		
+		double sum1 = 0;
+		for (double d : intArray) {
+			if (sum1 += (d / 2)) {
+			times2List.add(new Double(sum1));
+		}
+		return sum1;
+		}
+		}
 	
 	/*
 	 Given a List of Integers, return the largest value.
@@ -102,7 +121,15 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		
+		List<Integer> oddList = new ArrayList<Integer>();
+		
+		for (int nums : integerArray) {
+			if (nums % 2 == 1) {
+				oddList.add(nums);
+		}
+		}
+		return oddList;
 	}
 	
 	/* 
