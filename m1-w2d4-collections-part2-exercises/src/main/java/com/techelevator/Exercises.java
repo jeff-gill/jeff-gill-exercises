@@ -83,9 +83,28 @@ public class Exercises {
 	 * 
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		
+		if (itemNumber == null || itemNumber.length() < 1) {
+			return 0.00;
+		}
+		
+		Map<String, Double> itemSale = new HashMap<String, Double>();
+		itemSale.put("kitchen4001", 0.20);
+		itemSale.put("garage1070", 0.15);
+		itemSale.put("livingroom", 0.10);
+		itemSale.put("kitchen6073", 0.40);
+		itemSale.put("bedroom3434", 0.60);
+		itemSale.put("bath0073", 0.15);
+		
+		Double salePrice = itemSale.get(itemNumber.toLowerCase());
+		
+		if (salePrice == null ) {
+			return 0.00;
+		}
+		
+		return salePrice;
 	}
-	
+		
 	/*
 	 * Modify and return the given map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
 	 * but only if Paul has less than $10s.
@@ -97,6 +116,8 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
+		
+		
 		return null;
 	}
 	
