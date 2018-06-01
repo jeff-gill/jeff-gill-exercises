@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeSet;
 
 public class Exercises {
 
@@ -76,14 +77,31 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		Stack<String> myStringList = new Stack<String>();
+		
+		Stack<String> resultStack = new Stack<String>();
+		
+		List<String> result = new ArrayList<String>();
+		
+		for (String word : stringList) {
+			resultStack.push(word);
+		}
+		while (resultStack.size() > 0) {
+			result.add(resultStack.pop());
+		}
+		
+		return result;
+	
+		
+	}
+	/*
+			
+		int myStringList = 0;
 		for(int i = 0; i < myStringList.size(); i++) {
 			myStringList2 += myStringList.push(i);
 		}
-			System.out.println(myStringList2);
+			return StringList2;
 		}
-		
-	
+
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -95,14 +113,12 @@ public class Exercises {
 		
 		List<Double> times2List = new ArrayList<Double>();
 		
-		double sum1 = 0;
-		for (double d : intArray) {
-			if (sum1 += (d / 2)) {
-			times2List.add(new Double(sum1));
+		for (int i : intArray) {
+			times2List.add(i / 2.0);
 		}
-		return sum1;
+		return times2List;
 		}
-		}
+	
 	
 	/*
 	 Given a List of Integers, return the largest value.
@@ -111,8 +127,16 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+		int largest = 0;
+		for (int i = 0; i < integerList.size(); i++) {	
+			if (integerList.get(i) > largest) {
+			largest = integerList.get(i);
 	}
+		}
+		return largest;
+	}
+	
 	
 	/*
 	 Given an array of Integers, return a List of Integers containing just the odd values.
@@ -140,9 +164,18 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		
+		boolean result = false;
+		int count = 0;
+		for (int twiceNumber : integerList) {
+			if (twiceNumber == intToFind)
+				count++;
+		}
+			if (count > 1) {
+		result = true;
 	}
-	
+			return result;
+	}
 	/*
 	 Given an array of Integers, return a List that contains the same Integers (as Strings). Except any multiple of 3
     should be replaced by the String "Fizz", any multiple of 5 should be replaced by the String "Buzz",
@@ -156,8 +189,26 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
-	}
+		
+			List<String> threesList = new ArrayList<String>();
+			
+			for (Integer nums : integerArray) {
+			if (nums % 3 == 0 && nums % 5 == 0) {
+				threesList.add("FizzBuzz");
+			}
+			else if (nums % 3 == 0) {
+			threesList.add("Fizz");
+			}
+			else if (nums % 5 == 0) {
+				threesList.add("Buzz");
+			} else {
+				threesList.add(nums.toString());
+			}
+			}
+			return threesList;
+		}
+	
+
 
 	/*
 	 Given a list of Strings, return a list that contains the distinct values. In other words, no value is to be
@@ -166,9 +217,17 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+			
+		Set<String> nonDuplicates = new HashSet<String>();
+				
+		List<String> result = new ArrayList<String>();
+		
+			for(String words : stringList) {
+				nonDuplicates.add(words);
+			}
+			
+			return result;
 	}
-
 	/*
 	 Given two lists of Integers, interleave them beginning with the first element in the first list followed
 	 by the first element of the second. Continue interleaving the elements until all elements have been interwoven.
