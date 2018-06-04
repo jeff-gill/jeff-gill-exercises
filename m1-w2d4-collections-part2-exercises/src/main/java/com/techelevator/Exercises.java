@@ -151,12 +151,9 @@ public class Exercises {
 			peterPaul.put("Peter", (peterBalance / 4) * 3);
 			peterPaul.put("Paul", (paulBalance / 4) * 3);
 			peterPaul.put("PeterPaulPartnership", ((peterBalance / 4) + (paulBalance / 4)));
-
+		}
 			return peterPaul;
 		}
-		return peterPaul;
-
-	}
 
 	/*
 	 * Given an array of non-empty strings, return a Map<String, String> where for
@@ -295,8 +292,6 @@ public class Exercises {
 		return combinedWarehouse;
 	}
 
-	
-
 	/*
 	 * Just when you thought it was safe to get back in the water ---
 	 * last2Revisited!!!!
@@ -325,9 +320,9 @@ public class Exercises {
 
 			String searchWord = (word.substring(word.length() - 2, word.length()));
 			int count = 0;
-			
+
 			String str = word.substring(0, word.length() - 2);
-			
+
 			for (int i = 0; i < str.length() - 1; i++) {
 				if (str.substring(i, i + 2).equals(searchWord))
 					count++;
