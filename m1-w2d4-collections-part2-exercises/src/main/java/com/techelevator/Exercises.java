@@ -152,8 +152,8 @@ public class Exercises {
 			peterPaul.put("Paul", (paulBalance / 4) * 3);
 			peterPaul.put("PeterPaulPartnership", ((peterBalance / 4) + (paulBalance / 4)));
 		}
-			return peterPaul;
-		}
+		return peterPaul;
+	}
 
 	/*
 	 * Given an array of non-empty strings, return a Map<String, String> where for
