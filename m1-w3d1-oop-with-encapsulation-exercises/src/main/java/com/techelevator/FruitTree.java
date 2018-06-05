@@ -7,7 +7,7 @@ public class FruitTree {
 
 	public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
 		this.typeOfFruit = typeOfFruit;
-		this.piecesOfFruitLeft = startingPiecesOfFruit;	
+		this.piecesOfFruitLeft = startingPiecesOfFruit;
 	}
 
 	public String getTypeOfFruit() {
@@ -26,5 +26,5 @@ public class FruitTree {
 			return true;
 		}
 	}
-	
+
 }
