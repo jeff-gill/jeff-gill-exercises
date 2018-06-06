@@ -5,7 +5,7 @@ public class HomeworkAssignment {
 	private int totalMarks;
 	private int possibleMarks;
 	private String submitterName;
-	private String letterGrade;
+
 
 	public HomeworkAssignment(int possibleMarks) {
 		this.possibleMarks = possibleMarks;
