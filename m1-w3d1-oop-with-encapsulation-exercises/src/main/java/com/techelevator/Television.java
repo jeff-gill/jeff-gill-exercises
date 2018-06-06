@@ -6,6 +6,61 @@ public class Television {
 	private int currentChannel;
 	private int currentVolume;
 
+	public Television() {
+		this.isOn = false;
+		this.currentChannel = 3;
+		this.currentVolume = 2;
+	}
+
+	public void turnOff() {
+		isOn = false;
+	}
+
+	public void turnOn() {
+		isOn = true;
+	}
+
+	public void changeChannel(int newChannel) {
+		if(isOn && newChannel <= 18 && newChannel >= 3) {
+			this.currentChannel = newChannel;
+		} else {
+			newChannel = currentChannel;
+		}
+	}
+	public void channelUp() {
+		if (isOn && currentChannel < 18) {
+			currentChannel++;
+		} else {
+			this.currentChannel = 3;
+		}
+	}
+
+	public void channelDown() {
+		if (isOn && currentChannel > 3) {
+			currentChannel--;
+		}else if (isOn && currentChannel == 3)
+			this.currentChannel = 18;
+	}
+
+	public void raiseVolume() {
+		if (isOn && currentVolume < 10) {
+			currentVolume++;
+		}else if (isOn && currentVolume == 10)
+			this.currentVolume = 10;
+	}
+
+	public void lowerVolume() {
+		if (isOn && currentVolume > 0) {
+			currentVolume--;
+		}else {
+			this.currentVolume = 0;
+		}
+	}
+
+	public boolean isOn() {
+		return isOn;
+	}
+
 	public int getCurrentChannel() {
 		return currentChannel;
 	}
@@ -14,76 +69,4 @@ public class Television {
 		return currentVolume;
 	}
 
-	public boolean isOn() {
-		return !isOn;
-	}
-
-	public void turnOff() {
-		this.currentVolume = 0;
-	}
-
-	public void turnOn() {
-		this.currentVolume = 2;
-		this.currentChannel = 3;
-	}
-
-	public int changeChannel(int newChannel) {
-		if (isOn = true && currentChannel >=3 && currentChannel <= 18) {
-			int newChannel = currentChannel + changeChannel;
-			} else {
-				return newChannel;
-			}
-	
-	public int channelUp() {
-		newChannel = currentChannel +1;
-		if (isOn = true && newChannel >= 3 && newChannel <= 18);
-		return newChannel;
-		} 
-		if (isOn = true && newChannel < 3){
-		newChannel = 18;
-		}else if (isOn && newChannel > 18) {
-		newChannel = 3;
-	} else {
-		return currentChannel;
-	}
-
-	public int channelDown() {
-		newChannel = currentChannel -1 1;
-		if (isOn = true && newChannel >= 3 && newChannel <= 18);
-		return newChannel;
-		} 
-		if (isOn = true && newChannel < 3){
-		newChannel = 18;
-		}else if (isOn && newChannel > 18) {
-		newChannel = 3;
-	} else {
-		return currentChannel;
-	}
-
-	public int raiseVolume() {
-		this.newVolume = currentVolume + 1;
-		if (isOn = true && newVolume >= 0 && newVolume <= 10);
-		return this.newVolume;
-		} 
-		if (isOn = true && newVolume <= 0){
-		this.newVolume = 0;
-		}else if (isOn && newVolume > 10) {
-		this.newVolume = 10;
-	} else {
-		return currentVolume;
-	}
-
-	public int lowerVolume() {
-		newVolume = currentVolume - 1;
-		if (isOn = true && newVolume >= 0 && newVolume <= 10);
-		return newVolume;
-		} 
-		if (isOn = true && newVolume <= 0){
-		newVolume = 0;
-		}else if (isOn && newVolume > 10) {
-		newVolume = 10;
-	} else {
-		return currentVolume;
-	}
-}
 }

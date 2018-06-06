@@ -7,9 +7,11 @@ public class Airplane {
 	private int totalFirstClassSeats;
 	private int bookedCoachSeats;
 	private int totalCoachSeats;
+	private int availableFirstClassSeats;
+	private int availableCoachSeats;
 
 	public Airplane(String planeNumber, int totalFirstClassSeats, int totalCoachSeats) {
-		this.planeNumber = (String) planeNumber;
+		this.planeNumber = planeNumber;
 		this.totalFirstClassSeats = totalFirstClassSeats;
 		this.totalCoachSeats = totalCoachSeats;
 	}
@@ -33,26 +35,34 @@ public class Airplane {
 	public int getTotalCoachSeats() {
 		return totalCoachSeats;
 	}
-	
-	public int getAvailableFirstClassSeats() {
-		int forFirstClass = ((int) bookedFirstClassSeats - (int)totalFirstClassSeats);
-		return forFirstClass;
-	}
-	
-	public int getAvailableCoachSeats() {
-		int forCoach = (bookedCoachSeats - totalCoachSeats);
-		return forCoach;
-	}
-	
 
-	boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
-		if ((int) forFirstClass > 0) {
-			forFirstClass = true;
-		} else {
-			this.forFirstClass = false;
-		}
-}
-	
-	
+	public int getAvailableFirstClassSeats() {
+		availableFirstClassSeats = (totalFirstClassSeats - bookedFirstClassSeats);
+		return availableFirstClassSeats;
 	}
-	
+
+	public int getAvailableCoachSeats() {
+		availableCoachSeats = (totalCoachSeats - bookedCoachSeats);
+		return availableCoachSeats;
+	}
+
+	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
+		if (forFirstClass) {
+			if (totalNumberOfSeats <= getAvailableFirstClassSeats()) {
+				availableFirstClassSeats -= totalNumberOfSeats;
+				bookedFirstClassSeats += totalNumberOfSeats;
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			if (totalNumberOfSeats <= getAvailableCoachSeats()) {
+				availableCoachSeats -= totalNumberOfSeats;
+				bookedCoachSeats += totalNumberOfSeats;
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+}
