@@ -11,7 +11,6 @@ public class HomeworkAssignment {
 		this.possibleMarks = possibleMarks;
 	}
 
-
 	public int getTotalMarks() {
 		return totalMarks;
 	}
@@ -32,45 +31,36 @@ public class HomeworkAssignment {
 		return possibleMarks;
 	}
 
-	public String getLetterGrade() {
-		return letterGrade;
-	}
+	
 
-	public void studentGrade (((Double)this.totalMarks / (Double) this.possibleMarks) * 100) {
-		if (studentGrade >= 90) {
+	public String getLetterGrade() {
+		double result = ((this.totalMarks / (double) this.possibleMarks) * 100);
+		if (result >= 90) {
 			return "A";
 		}
-		else if (studentGrade >= 80) {
-			return "b";
+		else if (result >= 80) {
+			return "B";
 		}
-		else if (studentGrade >= 70) {
+		else if (result >= 70) {
 			return "C";
 		}
-		else if (studentGrade >= 60) {
+		else if (result >= 60) {
 			return "D";
 		}else {
 			return "F";
 		}
 	}
-	
-
-	
-	/*
-	public void studentGrade ((Double)this.totalMarks / (Double) this.possibleMarks) {
-		if ((totalMarks / possibleMarks) >= ((possibleMarks / 10) * 9)) {
-			this.letterGrade = (String) "A";
-		}
-		if (((totalMarks / possibleMarks) >= ((possibleMarks / 10) * 8)) && ((totalMarks / possibleMarks) < ((possibleMarks / 10) * 9))){
-			this.letterGrade = (String) "B";
-		} 
-		if (((totalMarks / possibleMarks) >= ((possibleMarks / 10) * 8)) && ((totalMarks / possibleMarks) < ((possibleMarks / 10) * 8))){
-			this.letterGrade = (String) "C";
-		} 
-		if (((totalMarks / possibleMarks) >= ((possibleMarks / 10) * 7)) && ((totalMarks / possibleMarks) < ((possibleMarks / 10) * 8))){
-			this.letterGrade = (String) "D";
-		} else {
-			this.letterGrade = (String) "F";
-		};
-		return letterGrade;
-	}
 }
+/*
+ * public void studentGrade ((Double)this.totalMarks / (Double)
+ * this.possibleMarks) { if ((totalMarks / possibleMarks) >= ((possibleMarks /
+ * 10) * 9)) { this.letterGrade = (String) "A"; } if (((totalMarks /
+ * possibleMarks) >= ((possibleMarks / 10) * 8)) && ((totalMarks /
+ * possibleMarks) < ((possibleMarks / 10) * 9))){ this.letterGrade = (String)
+ * "B"; } if (((totalMarks / possibleMarks) >= ((possibleMarks / 10) * 8)) &&
+ * ((totalMarks / possibleMarks) < ((possibleMarks / 10) * 8))){
+ * this.letterGrade = (String) "C"; } if (((totalMarks / possibleMarks) >=
+ * ((possibleMarks / 10) * 7)) && ((totalMarks / possibleMarks) <
+ * ((possibleMarks / 10) * 8))){ this.letterGrade = (String) "D"; } else {
+ * this.letterGrade = (String) "F"; }; return letterGrade; } }
+ */

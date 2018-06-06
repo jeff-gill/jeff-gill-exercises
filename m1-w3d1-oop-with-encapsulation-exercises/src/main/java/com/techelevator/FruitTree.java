@@ -26,5 +26,4 @@ public class FruitTree {
 			return true;
 		}
 	}
-
 }

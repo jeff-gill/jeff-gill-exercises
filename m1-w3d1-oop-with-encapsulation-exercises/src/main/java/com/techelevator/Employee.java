@@ -5,14 +5,14 @@ public class Employee {
 	private int employeeId;
 	private String firstName;
 	private String lastName;
-	public String fullName;
 	private String department;
 	private double annualSalary;
 
 	public Employee(int employeeId, String firstName, String lastName, double salary) {
 		this.employeeId = employeeId;
-		this.fullName = lastName + ", " + firstName;
-		this.annualSalary = (Double) annualSalary;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.annualSalary = salary;
 
 	}
 
@@ -42,20 +42,17 @@ public class Employee {
 	}
 
 	public String getFullName() {
-		return fullName;
+		return lastName + ", " + firstName;
 	}
-
+	
 	public double getAnnualSalary() {
 		return annualSalary;
 	}
 
-	public void raiseSalary(double percent) {/*
-	if (annualSalary != 0) {
-		this.annualSalary = (annualSalary + (annualSalary * (Double) percentage));
+	public void raiseSalary(double percent) {
+		this.annualSalary = (annualSalary + (annualSalary * (percent / 100)));
+	
 	}
-	return (Double) annualSalary;	
-	}
-	return (Double) annualSalary;
-}*/
+
 }
-}
+
