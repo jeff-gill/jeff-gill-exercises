@@ -60,7 +60,7 @@ public class FruitTreeTest {
 
 	@Test
 	public void pick_negative_fruit() {
-		Assert.assertFalse(fruitTree.PickFruit(-1));
-		Assert.assertEquals(expected, actual);
+		Assert.assertTrue(fruitTree.PickFruit(-1));
+		Assert.assertEquals(21, fruitTree.getPiecesOfFruitLeft());
 	}
 }
