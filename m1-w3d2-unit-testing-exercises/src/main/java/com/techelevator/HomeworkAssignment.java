@@ -2,8 +2,8 @@ package com.techelevator;
 
 public class HomeworkAssignment {
 	
-    private int totalMarks;
-    private int possibleMarks;
+    protected int totalMarks;
+    protected int possibleMarks;
 
 
     /**

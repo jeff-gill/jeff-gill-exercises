@@ -1,4 +1,4 @@
-package com.techelevator;
+ffpackage com.techelevator;
 
 public class Employee {
 
@@ -6,7 +6,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String department;
-    private double annualSalary;
+    protected double annualSalary;
 
     /**
      * Creates a new employee 

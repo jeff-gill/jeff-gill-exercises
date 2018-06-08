@@ -6,23 +6,25 @@ import org.junit.Test;
 
 public class HomeworkAssignmentTest {
 
-	private HomeworkAssignment homeworkAssignment;
+	private HomeworkAssignment myFinalExam;
+
 	
 //	does the correct letter grade get returned?
 //	what happens when an incorrect value is given for total marks?
 	
 	@Before
 	public void setup() {
-		homeworkAssignment = new HomeworkAssignmentTest(.9, "A");
+		myFinalExam = new HomeworkAssignment(100);
 		
-	}
-	
+}
+
 	@Test
-	public void verify_correct_letter_grade_is_returned() {
+	public void verify_correct_possible_is_returned() {
 		//Arrange
 		//Act
-		String percentage = homeworkAssignment.getLetterGrade();
+		myFinalExam.setTotalMarks(95);
 		//Assert
-		Assert.assertEquals("The incorrect letter grade was returned", .9, percentage);
-}
-}
+		Assert.assertEquals ("A", myFinalExam.getLetterGrade());
+	}
+		
+	}
