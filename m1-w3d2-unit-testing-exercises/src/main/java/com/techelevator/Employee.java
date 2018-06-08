@@ -1,4 +1,4 @@
-ffpackage com.techelevator;
+package com.techelevator;
 
 public class Employee {
 
@@ -19,6 +19,7 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.annualSalary = salary;
+        
     }
 
     /**
