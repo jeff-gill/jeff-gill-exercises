@@ -24,4 +24,6 @@ public class ElevatorTest {
 				Assert.assertEquals(5, currentLevel);
 	} 
 
+	
+	
 }

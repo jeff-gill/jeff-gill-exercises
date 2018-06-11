@@ -39,5 +39,17 @@ public class EmployeeTest {
 		Assert.assertEquals("Smith, Bob", employee1.FullName());
 	}
 
+	@Test
+	public void verify_raise_salary_is_correct() {
+		employee1.RaiseSalary(10.0);
+		Assert.assertEquals(44000.00, employee1.getAnnualSalary(), 0.001);
+}
+	
+	@Test
+	public void verify_raise_salary_is_not_lowered() {
+		employee1.RaiseSalary(-10.0);
+		Assert.assertEquals(40000.00, employee1.getAnnualSalary(), 0.001);
+}
 	
 }
+

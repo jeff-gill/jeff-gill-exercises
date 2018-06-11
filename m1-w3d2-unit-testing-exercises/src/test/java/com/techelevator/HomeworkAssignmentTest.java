@@ -16,13 +16,13 @@ public class HomeworkAssignmentTest {
 		myFinalExam = new HomeworkAssignment(100);
 	}
 
-	@Test 
+	@Test
 	public void verify_correct_possible_marks() {
-//		myFinalExam.getPossibleMarks(); establishied in the @Before stated
+		// myFinalExam.getPossibleMarks(); establishied in the @Before stated
 		Assert.assertEquals(95, myFinalExam.getPossibleMarks());
 
 	}
-	
+
 	@Test
 	public void verify_A_grade_is_returned() {
 		// Arrange

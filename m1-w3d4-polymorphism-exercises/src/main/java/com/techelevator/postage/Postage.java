@@ -5,7 +5,7 @@ public class Postage {
 	private String name;
 	private int weight;
 	private int distance;
-	private String shippingClass;
+	protected String shippingClass;
 	
 	public Postage(String name, int weight, int distance, String shippingClass) {
 		this.name = name;

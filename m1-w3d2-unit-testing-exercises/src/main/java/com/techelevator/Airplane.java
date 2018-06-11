@@ -75,7 +75,7 @@ public class Airplane {
     }
 
     /**
-     * Reserves a first class or coach seat. Algorithm checks for reservation possiblity before making reservation. 
+     * Reserves a first class or coach seat. Algorithm checks for reservation possibility before making reservation. 
      * @param firstClass True if the reservation is for first class, false for coach
      * @param totalNumberOfSeats Total number of seats to reserve
      * @return True if reservation was successful, false otherwise
