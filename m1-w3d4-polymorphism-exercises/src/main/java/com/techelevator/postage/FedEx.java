@@ -7,8 +7,8 @@ public class FedEx extends Postage implements IDeliveryDriver {
 
 	public FedEx(String name, int weight, int distance) {
 
-		super("FedEx", weight, distance, shippingClass);
-
+		super("FedEx", weight, distance);
+		distance = getDistance();
 		double rate = 20.00;
 		if (distance > 500) {
 			rate += 5.00;
@@ -18,7 +18,7 @@ public class FedEx extends Postage implements IDeliveryDriver {
 			rate += 3.00;
 		}
 		else {
-			rate = rate;
+			return rate;
 			
 		}
 	}
