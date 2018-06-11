@@ -4,6 +4,6 @@ public interface IVehicle {
 
 	double getDistance();
 	
-	Integer calculateToll(int distance);
+	Integer calculateToll(int toll);
 	
 }
