@@ -1,10 +1,10 @@
 package com.techelevator.postage;
 
+import java.math.BigDecimal;
+
 public class PostalService implements IDeliveryDriver {
 
-	protected double rate;
 	private String perMileClass;
-	private int weightInOunces;
 
 	public PostalService(String perMileClass) {
 		this.perMileClass = perMileClass;
@@ -12,104 +12,75 @@ public class PostalService implements IDeliveryDriver {
 
 	
 	@Override
-	public double calculateRate(int distance, double weight) {
-		distance = 0;
-		weightInOunces = (int) weight;
+	public double calculateRate(int distance, int weight) {
+		
+		double perMileRate = 0;
+		
 		if (perMileClass == "1st Class") {
-			if (weightInOunces <= 2 && weightInOunces > 0) {
-				rate = 0.035;
+			if (weight <= 2 && weight > 0) {
+				perMileRate = 0.035;
 			}
-			if (weightInOunces > 2 && weightInOunces < 9) {
-				rate = 0.040;
+			if (weight > 2 && weight < 9) {
+				perMileRate = 0.040;
 			}
-			if (weightInOunces > 9 && weightInOunces < 16) {
-				rate = 0.047;
+			if (weight > 9 && weight < 16) {
+				perMileRate = 0.047;
 			}
-			if (weightInOunces > 16 && weightInOunces <= (16 * 3)) {
-				rate = 0.195;
+			if (weight > 16 && weight <= (16 * 3)) {
+				perMileRate = 0.195;
 			}
-			if (weightInOunces > (16 * 3) && weightInOunces <= (16 * 8)) {
-				rate = 0.450;
+			if (weight > (16 * 3) && weight <= (16 * 8)) {
+				perMileRate = 0.450;
 			}
-			if (weightInOunces >= (16 * 9)) {
-				rate = 0.500;
+			if (weight >= (16 * 9)) {
+				perMileRate = 0.500;
 			}
-			return rate;
+			
 		}
 
 		if (perMileClass == "2nd Class") {
-			if (weightInOunces <= 2 && weightInOunces > 0) {
-				rate = 0.0035;
+			if (weight <= 2 && weight > 0) {
+				perMileRate = 0.0035;
 			}
-			if (weightInOunces > 2 && weightInOunces < 9) {
-				rate = 0.0040;
+			if (weight > 2 && weight < 9) {
+				perMileRate = 0.0040;
 			}
-			if (weightInOunces > 9 && weightInOunces < 16) {
-				rate = 0.0047;
+			if (weight > 9 && weight < 16) {
+				perMileRate = 0.0047;
 			}
-			if (weightInOunces > 16 && weightInOunces <= (16 * 3)) {
-				rate = 0.0195;
+			if (weight > 16 && weight <= (16 * 3)) {
+				perMileRate = 0.0195;
 			}
-			if (weightInOunces > (16 * 3) && weightInOunces <= (16 * 8)) {
-				rate = 0.0450;
+			if (weight > (16 * 3) && weight <= (16 * 8)) {
+				perMileRate = 0.0450;
 			}
-			if (weightInOunces >= (16 * 9)) {
-				rate = 0.0500;
+			if (weight >= (16 * 9)) {
+				perMileRate = 0.0500;
 			}
-			return rate;
 		}
 		if (perMileClass == "3rd Class") {
-			if (weightInOunces <= 2 && weightInOunces > 0) {
-				rate = 0.0020;
+			if (weight <= 2 && weight > 0) {
+				perMileRate = 0.0020;
 			}
-			if (weightInOunces > 2 && weightInOunces < 9) {
-				rate = 0.0022;
+			if (weight > 2 && weight < 9) {
+				perMileRate = 0.0022;
 			}
-			if (weightInOunces > 9 && weightInOunces < 16) {
-				rate = 0.0024;
+			if (weight > 9 && weight < 16) {
+				perMileRate = 0.0024;
 			}
-			if (weightInOunces > 16 && weightInOunces <= (16 * 3)) {
-				rate = 0.0151;
+			if (weight > 16 && weight <= (16 * 3)) {
+				perMileRate = 0.0150;
 			}
-			if (weightInOunces > (16 * 3) && weightInOunces <= (16 * 8)) {
-				rate = 0.0160;
+			if (weight > (16 * 3) && weight <= (16 * 8)) {
+				perMileRate = 0.0160;
 			}
-			if (weightInOunces >= (16 * 9)) {
-				rate = 0.0170;
+			if (weight >= (16 * 9)) {
+				perMileRate = 0.0170;
 			}
-			return rate;
 		}
-		return rate;
+		return BigDecimal
+				.valueOf(perMileRate * distance)
+				.setScale(3, BigDecimal.ROUND_HALF_DOWN)
+				.doubleValue();
 	}
-
-	public double getRate() {
-		return rate;
-	}
-	
-	
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
-
-
-	public String getPerMileClass() {
-		return perMileClass;
-	}
-
-
-	public void setPerMileClass(String perMileClass) {
-		this.perMileClass = perMileClass;
-	}
-
-
-	public int getWeightInOunces() {
-		return weightInOunces;
-	}
-
-
-	public void setWeightInOunces(int weightInOunces) {
-		this.weightInOunces = weightInOunces;
-	}
-
-
 }
