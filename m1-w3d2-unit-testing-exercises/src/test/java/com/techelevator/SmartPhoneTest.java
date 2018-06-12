@@ -5,59 +5,64 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ElevatorTestTest {
+public class SmartPhoneTest {
 
 	@Before
 	public void setUp() throws Exception {
 	}
 
 	@Test
-	public void testElevator() {
+	public void testSmartPhone() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetShaftNumber() {
+	public void testGetPhoneNumber() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetCurrentLevel() {
+	public void testGetCarrier() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetNumberOfLevels() {
+	public void testGetOperatingSystem() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testIsDoorOpen() {
+	public void testSetOperatingSystem() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testIsMoving() {
+	public void testGetBatteryCharge() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testOpenDoor() {
+	public void testIsOnCall() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCloseDoor() {
+	public void testCall() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGoUp() {
+	public void testAnswerPhone() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGoDown() {
+	public void testHangUp() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRechargeBattery() {
 		fail("Not yet implemented");
 	}
 

@@ -1,29 +1,64 @@
 package com.techelevator;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class ElevatorTest {
 
-	Elevator elevator;
-	
 	@Before
-	public void setup() {
-	elevator = new Elevator(1,13);
+	public void setUp() throws Exception {
 	}
 
 	@Test
-	public void elevator_should_not_go_up_with_door_open() {
-		// Arrange - open the door
-		elevator.isDoorOpen();
-		//Act - move the elevator
-		elevator.isGoUp(5);
-		//Assert - 
-		int currentLevel = elevator.getCurrentLevel();
-				Assert.assertEquals(5, currentLevel);
-	} 
+	public void testElevator() {
+		fail("Not yet implemented");
+	}
 
-	
-	
+	@Test
+	public void testGetShaftNumber() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetCurrentLevel() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetNumberOfLevels() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsDoorOpen() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsMoving() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testOpenDoor() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCloseDoor() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGoUp() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGoDown() {
+		fail("Not yet implemented");
+	}
+
 }
