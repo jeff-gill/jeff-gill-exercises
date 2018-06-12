@@ -1,3 +1,6 @@
+
+//introduction-to-classes-exercises
+
 package com.techelevator.product;
 
 public class Product {

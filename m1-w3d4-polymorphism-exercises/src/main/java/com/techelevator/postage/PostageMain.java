@@ -22,9 +22,10 @@ public class PostageMain {
 		System.out.format("%1s%23s\n", "Delivery Method", "$ cost");
 		System.out.print("--------------------------------------");
 		System.out.println();
-		System.out.format("%1s%7s%1s\n", "Postal Service (1st Class)", "$", (weightAmount * distanceTraveling)) ;
-		System.out.format("%1s%7s%1s\n", "Postal Service (2nd Class)", "$", (weightAmount * distanceTraveling));
-		System.out.format("%1s%7s%1s\n", "Postal Service (3rd Class)", "$", (weightAmount * distanceTraveling));
+		double rate = new PostalService(rate).calculateRate(distance, weight);
+		System.out.format("%1s%7s%1s\n", "Postal Service (1st Class)", "$", (weightAmount * rate)) ;
+		System.out.format("%1s%7s%1s\n", "Postal Service (2nd Class)", "$", (weightAmount * PostalService.rate));
+		System.out.format("%1s%7s%1s\n", "Postal Service (3rd Class)", "$", (weightAmount * PostalService.rate));
 		System.out.format("%1s%28s%1s\n", "FexEd", "$", "hi");
 		System.out.format("%1s%15s%1s\n", "SPU (4-day ground)", "$", "hi");
 		System.out.format("%1s%14s%1s\n", "SPU (2-day business", "$", "hi");

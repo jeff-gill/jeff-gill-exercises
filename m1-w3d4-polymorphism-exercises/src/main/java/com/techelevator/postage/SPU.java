@@ -7,7 +7,7 @@ public class SPU implements IDeliveryDriver {
 	private double rateNextDay = 0.075;
 	private String shippingClass;
 	private double weightInPounds;
-	private double rate;
+	protected double rate;
 
 	public SPU(String shippingClass) {
 		this.shippingClass = shippingClass;

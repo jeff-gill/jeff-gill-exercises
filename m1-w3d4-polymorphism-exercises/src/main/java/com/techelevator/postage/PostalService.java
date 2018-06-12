@@ -2,7 +2,7 @@ package com.techelevator.postage;
 
 public class PostalService implements IDeliveryDriver {
 
-	private double rate;
+	protected double rate;
 	private String perMileClass;
 	private int weightInOunces;
 
@@ -80,6 +80,35 @@ public class PostalService implements IDeliveryDriver {
 			return rate;
 		}
 		return rate;
+	}
+
+	public double getRate() {
+		return rate;
+	}
+	
+	
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+
+
+	public String getPerMileClass() {
+		return perMileClass;
+	}
+
+
+	public void setPerMileClass(String perMileClass) {
+		this.perMileClass = perMileClass;
+	}
+
+
+	public int getWeightInOunces() {
+		return weightInOunces;
+	}
+
+
+	public void setWeightInOunces(int weightInOunces) {
+		this.weightInOunces = weightInOunces;
 	}
 
 

@@ -2,7 +2,7 @@ package com.techelevator.postage;
 
 public class FexEd implements IDeliveryDriver {
 
-	private double rate = 20.00;
+	protected double rate = 20.00;
 	private double distanceBoost = 5.00;
 	private double weightBoost = 3.00;
 	private int distanceLimit = 500;
