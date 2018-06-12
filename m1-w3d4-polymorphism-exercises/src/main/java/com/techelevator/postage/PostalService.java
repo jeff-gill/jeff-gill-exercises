@@ -10,20 +10,10 @@ public class PostalService implements IDeliveryDriver {
 		this.perMileClass = perMileClass;
 	}
 
-	public double getRate() {
-		return rate;
-	}
-
-	public String getPerMileClass() {
-		return perMileClass;
-	}
-
-	public int getWeightInOunces() {
-		return weightInOunces;
-	}
-
+	
 	@Override
 	public double calculateRate(int distance, double weight) {
+		distance = 0;
 		weightInOunces = (int) weight;
 		if (perMileClass == "1st Class") {
 			if (weightInOunces <= 2 && weightInOunces > 0) {
@@ -91,4 +81,6 @@ public class PostalService implements IDeliveryDriver {
 		}
 		return rate;
 	}
+
+
 }

@@ -8,7 +8,7 @@ public class Tank implements IVehicle {
 
 	public Tank(double toll, int numberOfAxels, int distance) {
 		this.toll = toll;
-		this.numberOfAxels = numberOfAxels;
+		this.setNumberOfAxels(numberOfAxels);
 	}
 
 	public double calculateToll(double toll) {
@@ -32,6 +32,22 @@ public class Tank implements IVehicle {
 	}
 
 	public void setDistance(int distance) {
+	}
+
+	public int getNumberOfAxels() {
+		return numberOfAxels;
+	}
+
+	public void setNumberOfAxels(int numberOfAxels) {
+		this.numberOfAxels = numberOfAxels;
+	}
+
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
 	}
 
 

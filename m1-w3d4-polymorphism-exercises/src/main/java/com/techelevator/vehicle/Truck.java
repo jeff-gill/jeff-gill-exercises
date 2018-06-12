@@ -26,7 +26,7 @@ public class Truck implements IVehicle {
 
 	@Override
 	public Integer calculateToll(int distance) {
-		return (toll = (rate * getDistance()));
+		return (int) (toll = (rate * getDistance()));
 	}
 
 	@Override

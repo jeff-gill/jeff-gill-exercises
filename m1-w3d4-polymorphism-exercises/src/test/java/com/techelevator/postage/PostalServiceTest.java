@@ -10,33 +10,10 @@ public class PostalServiceTest {
 	private PostalService packageA;
 
 	@Before
-	public void setUp(){
-		packageA = new FexEd(
+	public void setup() {
+		packageA = new PostalService("1stClass", 19);
+		
 	}
-
-	@Test
-	public void testPostalService() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetRate() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPerMileClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetWeightInOunces() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCalculateRate() {
-		fail("Not yet implemented");
-	}
-
+	
+	
 }
