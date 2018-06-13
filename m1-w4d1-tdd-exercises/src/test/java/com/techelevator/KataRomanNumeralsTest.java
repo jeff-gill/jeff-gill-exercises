@@ -7,7 +7,7 @@ import org.junit.Test;
 public class KataRomanNumeralsTest {
 	
 	KataRomanNumerals toRoman;
-	KataRomanNumerals toArabic;
+	KataRomanNumerals romanToArabic;
 	
 	
 	@Before
@@ -58,5 +58,62 @@ public class KataRomanNumeralsTest {
 	@Test
 	public void return_mi_if_the_number_is_1001() {
 		Assert.assertEquals("MI", toRoman.toRoman(1001));
+	}
+	
+	@Test
+	public void return_MMDCCLXV_if_the_number_is_1001() {
+		Assert.assertEquals("MMDCCLXV", toRoman.toRoman(2765));
+	}
+	
+	/////////////////////////
+	
+	@Before
+	public void setup2() {
+		romanToArabic = new KataRomanNumerals();
+		}
+	
+	@Test
+	public void return_1_if_the_numer_is_i() {
+		Assert.assertEquals(1, romanToArabic.romanToInt("I"));
+	}
+
+	@Test
+	public void return_5_if_the_number_is_v() {
+		Assert.assertEquals(5, romanToArabic.romanToInt("V"));
+	}
+	
+	@Test
+	public void return_10_if_the_number_is_x() {
+		Assert.assertEquals(10, romanToArabic.romanToInt("X"));
+	}
+
+	@Test
+	public void return_50_if_the_number_is_l() {
+		Assert.assertEquals(50, romanToArabic.romanToInt("L"));
+	}
+	
+	@Test
+	public void return_100_if_the_number_is_c() {
+		Assert.assertEquals(100, romanToArabic.romanToInt("C"));
+	}
+	
+	@Test
+	public void return_500_if_the_number_is_d() {
+		Assert.assertEquals(500, romanToArabic.romanToInt("D"));
+	}
+	
+	@Test
+	public void return_1000_if_the_number_is_m() {
+		Assert.assertEquals(1000, romanToArabic.romanToInt("M"));
+	}
+	
+	@Test
+	public void return_1001_if_the_number_is_mi() {
+		Assert.assertEquals(1001, romanToArabic.romanToInt("MI"));
+	}
+	
+	@Test
+	public void return_2765_if_the_number_is_MMDCCLXV() {
+		Assert.assertEquals(2765, romanToArabic.romanToInt("MMDCCLXV"));
 	}
 }
