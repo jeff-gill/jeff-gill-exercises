@@ -74,7 +74,7 @@ public class KataRomanNumeralsTest {
 	
 	@Test
 	public void return_1_if_the_numer_is_i() {
-		Assert.assertEquals(1, romanToArabic.romanToInt("I"));
+		Assert.assertEquals(1, toRoman.romanToInt("I"));
 	}
 
 	@Test
