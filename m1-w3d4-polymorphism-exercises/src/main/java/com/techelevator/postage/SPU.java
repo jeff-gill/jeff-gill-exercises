@@ -4,33 +4,30 @@ import java.math.BigDecimal;
 
 public class SPU implements IDeliveryDriver {
 
-	private double rate4Day = 0.0050;
-	private double rate3Day = 0.050;
-	private double rateNextDay = 0.075;
+	private BigDecimal rate4Day = new BigDecimal(0.0050);
+	private BigDecimal rate3Day = new BigDecimal(0.050);
+	private BigDecimal rateNextDay = new BigDecimal(0.075);
 	private String shippingRate;
-	private double rate;
+	private BigDecimal rate;
 	
 	public SPU(String shippingRate) {
 		this.shippingRate = shippingRate;
 	}
 
-	public double calculateRate(int distance, int weight) {
+	public BigDecimal calculateRate(BigDecimal distance, int weight) {
 		weight /= 160;
 		if (shippingRate == "four-day ground") {
-			rate = ((weight * rate4Day) * distance);
+			BigDecimal rate = ((BigDecimal.valueOf(weight).multiply(rate4Day)).multiply(distance));
 			return rate;
 		} else if (shippingRate == "two-day business") {
-			rate = ((weight * rate3Day) * distance);
+			rate = ((BigDecimal.valueOf(weight).multiply(rate3Day)).multiply(distance));
 			return rate;
 		} else if (shippingRate == "next day") {
-			rate = ((weight * rateNextDay) * distance);
+			rate = ((BigDecimal.valueOf(weight).multiply(rateNextDay)).multiply(distance));
 			return rate;
 		} else {
 			
-			return BigDecimal
-					.valueOf(rate)
-					.setScale(3, BigDecimal.ROUND_HALF_DOWN)
-					.doubleValue();
+			return rate;
 		}
 	}
 

@@ -5,35 +5,37 @@ import java.math.BigDecimal;
 public class FexEd implements IDeliveryDriver {
 
 
-	private double distanceBoost = 5.00;
-	private double weightBoost = 3.00;
-	private int distanceLimit = 500;
-	private int weightLimit = 48;
-	private double shippingRate = 20.00;
+	private BigDecimal distanceBoost = new BigDecimal(5);
+	private BigDecimal weightBoost = new BigDecimal(3);
+	private BigDecimal distanceLimit = new BigDecimal(500);
+	private BigDecimal weightLimit = new BigDecimal(48);
+	private BigDecimal shippingRate = new BigDecimal(20);
 
-	public FexEd(double shippingRate) {
+	public FexEd(BigDecimal shippingRate) {
 		this.shippingRate = shippingRate;
 	}
 	
 	@Override
-	public double calculateRate(int distance, int weight) {
+	public BigDecimal calculateRate(BigDecimal distance, int weight) {
 	
-		if (distance > distanceLimit) {
-			shippingRate += distanceBoost;
+		if (BigDecimal.valueOf(distance).
+				BigDecimal(distanceLimit)) {
+			BigDecimal(BigDecimal = new Bog(shippingRate)
+					).add(BigDecimal(distanceBoost));
 
 		}
-		if (weight > weightLimit) {
+		if (BigDecimal(weight > weightLimit) {
 			shippingRate += weightBoost;
 		}
 			return BigDecimal.valueOf(shippingRate).
 					setScale(3, BigDecimal.ROUND_HALF_DOWN).doubleValue();
 	}
 
-	public double getShippingRate() {
+	public BigDecimal getShippingRate() {
 		return shippingRate;
 	}
 
-	public void setShippingRate(double shippingRate) {
+	public void setShippingRate(BigDecimal shippingRate) {
 		this.shippingRate = shippingRate;
 	}
 	

@@ -3,7 +3,9 @@
 
 package com.techelevator.postage;
 
+import java.math.BigDecimal;
+
 public interface IDeliveryDriver {
 
-	double calculateRate(int distance, int weight);
+	BigDecimal calculateRate(BigDecimal distance, int weight);
 }

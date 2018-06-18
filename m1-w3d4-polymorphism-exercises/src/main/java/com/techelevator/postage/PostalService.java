@@ -12,7 +12,7 @@ public class PostalService implements IDeliveryDriver {
 
 	
 	@Override
-	public double calculateRate(int distance, int weight) {
+	public BigDecimal calculateRate(BigDecimal distance, int weight) {
 		
 		double perMileRate = 0;
 		
@@ -78,9 +78,8 @@ public class PostalService implements IDeliveryDriver {
 				perMileRate = 0.0170;
 			}
 		}
-		return BigDecimal
-				.valueOf(perMileRate * distance)
+		return BigDecimal.valueOf(BigDecimal.valueOf(perMileRate).multiply(distance)
 				.setScale(3, BigDecimal.ROUND_HALF_DOWN)
-				.doubleValue();
+				.doubleValue());
 	}
 }
