@@ -36,6 +36,7 @@ public class FruitTree {
 		return piecesOfFruitLeft;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Picks fruit off of the tree and reduces the number of remaining pieces.
 	 * 
@@ -50,5 +51,21 @@ public class FruitTree {
 		piecesOfFruitLeft -= numberOfPieces;
 		return true;
 	}
+=======
+    /**
+     * Picks fruit off of the tree and reduces the number of remaining pieces. 
+     * @param numberOfPieces number of fruit pieces to remove
+     * @return True if there is enough fruit to pick, false if not.
+     */
+    public boolean PickFruit(int numberOfPieces)
+    {
+    	
+    		if (numberOfPieces < 0 || numberOfPieces > piecesOfFruitLeft) {
+    			return false;
+    		}
+        piecesOfFruitLeft -= numberOfPieces;
+        return true;
+    }
+>>>>>>> 2e50540c635802e7c7aafa33c8d8d71a918e277c
 
 }

@@ -369,6 +369,7 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
+<<<<<<< HEAD
 		int count = 0;
 		  for (int i = 0; i < str.length() - 2; i++) {
 		    if (str.substring(i, i++).equals(str.substring(i - 2))) count++;
@@ -378,6 +379,24 @@ public class Exercises {
 		
 		
 		return 0;
+=======
+		
+		int count = 0;
+		
+		if (str.length() <= 2) {
+			return count;
+		}
+		
+		String last2 = str.substring(str.length() - 2);
+		
+		for (int i = 0; i < str.length() - 2; i++) {
+			if (str.substring(i , i + 2).equals(last2)) {
+				count++;
+			}
+		}
+		
+		return count;
+>>>>>>> 2e50540c635802e7c7aafa33c8d8d71a918e277c
 	}
 
 	/*
