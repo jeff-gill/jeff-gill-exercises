@@ -18,10 +18,9 @@ public class FexEd implements IDeliveryDriver {
 	@Override
 	public BigDecimal calculateRate(BigDecimal distance, int weight) {
 	
-		if (BigDecimal.valueOf(distance).
+		if (BigDecimal.valueOf(distance) {
 				BigDecimal(distanceLimit)) {
-			BigDecimal(BigDecimal = new Bog(shippingRate)
-					).add(BigDecimal(distanceBoost));
+			return BigDecimal(shippingRate).add(BigDecimal(distanceBoost));
 
 		}
 		if (BigDecimal(weight > weightLimit) {

@@ -24,19 +24,13 @@ public class AirplaneTest {
 	}
 
 	@Test
-	public void test_plane_number_not_null() {
-		airplane1.setPlaneNumber("g56G");
-		Assert.assertEquals(null, airplane1.getPlaneNumber());
-	}
-
-	@Test
 	public void test_booked_first_class_seats() {
 		Assert.assertEquals(0, airplane1.getAvailableFirstClassSeats());
 	}
 
 	@Test
 	public void test_booked_coach_class_seats() {
-		Assert.assertEquals(0, airplane1.getAvailableCoachSeats());
+		Assert.assertEquals(50, airplane1.getAvailableCoachSeats());
 	}
 
 	@Test
