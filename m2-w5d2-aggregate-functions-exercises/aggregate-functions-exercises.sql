@@ -15,7 +15,7 @@
 -- (19 rows)
 
 select name || ', ' || district as name_and_state, population from city
-where district in ('Pennsyvania', 'West Viginia', 'Kenucky', 'Indiana', 'Michigan')
+where district in ('Pennsylvania', 'West Virginia', 'Kentucky', 'Indiana', 'Michigan')
 Order by district, name
 
 -- 2. The name, country code, and region of all countries in Africa.  The name and

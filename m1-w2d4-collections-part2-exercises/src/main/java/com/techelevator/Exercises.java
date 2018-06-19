@@ -3,13 +3,11 @@
 
 package com.techelevator;
 
-<<<<<<< HEAD
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-=======
-import java.util.HashMap;
->>>>>>> 2e50540c635802e7c7aafa33c8d8d71a918e277c
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -320,27 +318,6 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
-<<<<<<< HEAD
-
-		Map<String, Integer> wordCount = new HashMap<String, Integer>();
-
-		for (String word : words) {
-
-			String searchWord = (word.substring(word.length() - 2, word.length()));
-			int count = 0;
-
-			String str = word.substring(0, word.length() - 2);
-
-			for (int i = 0; i < str.length() - 1; i++) {
-				if (str.substring(i, i + 2).equals(searchWord))
-					count++;
-			}
-			wordCount.put(word, count);
-		}
-
-		return wordCount;
-
-=======
 		
 		Map<String, Integer> output = new HashMap<String, Integer>();
 		
@@ -365,7 +342,7 @@ public class Exercises {
 		}
 		
 		return output;
->>>>>>> 2e50540c635802e7c7aafa33c8d8d71a918e277c
+
 	}
 
 	/*
