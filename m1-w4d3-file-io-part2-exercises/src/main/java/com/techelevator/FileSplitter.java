@@ -16,18 +16,18 @@ public class FileSplitter {
 		String path = userInput.nextLine();
 
 		System.out.print("The maximum number of lines that should appear in each output file >>> ");
-		Integer line_count = Integer.parseInt(userInput.nextLine());
+		Integer lineCount = Integer.parseInt(userInput.nextLine());
 //		/Users/jgill/Development/jeffgill-java-blue-exercises/m1-w4d3-file-io-part2-exercises/src/main/java/com/techelevator/fizzbuzz.txt
 		System.out.println();
 		File f = new File(path);
-		if (f.exists() && f.isFile() && line_count > 0) {
-			int file_suffix = 1;
-			int line_counter = 1;
+		if (f.exists() && f.isFile() && lineCount > 0) {
+			int fileSuffix = 1;
+			int lineCounter = 1;
 
-			String newFilename = f.getAbsolutePath().replaceAll(".txt", "-" + file_suffix + ".txt");
+			String newFilename = f.getAbsolutePath().replaceAll(".txt", "-" + fileSuffix + ".txt");
 
-			File out_file = new File(newFilename);
-			out_file.createNewFile();
+			File outFile = new File(newFilename);
+			outFile.createNewFile();
 
 			try (Scanner fileScanner = new Scanner(f)) {
 				while (fileScanner.hasNextLine()) {
@@ -36,14 +36,14 @@ public class FileSplitter {
 						System.out.println(newFilename);
 						writer.write(line + "\n");
 					}
-					if (line_counter % line_count == 0 && fileScanner.hasNextLine()) {
-						file_suffix++;
-						newFilename = f.getAbsolutePath().replaceAll(".txt", "-" + file_suffix + ".txt");
-						out_file = new File(newFilename);
-						out_file.createNewFile();
+					if (lineCounter % lineCount == 0 && fileScanner.hasNextLine()) {
+						fileSuffix++;
+						newFilename = f.getAbsolutePath().replaceAll(".txt", "-" + fileSuffix + ".txt");
+						outFile = new File(newFilename);
+						outFile.createNewFile();
 					}
 
-					line_counter++;
+					lineCounter++;
 
 				}
 			}
