@@ -12,7 +12,7 @@ public class PostalService implements IDeliveryDriver {
 
 	
 	@Override
-	public BigDecimal calculateRate(BigDecimal distance, int weight) {
+	public BigDecimal calculateRate(int distance, int weight) {
 		
 		double perMileRate = 0;
 		
@@ -26,7 +26,7 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > 9 && weight < 16) {
 				perMileRate = 0.047;
 			}
-			if (weight > 16 && weight <= (16 * 3)) {
+			if (weight >= 16 && weight <= (16 * 3)) {
 				perMileRate = 0.195;
 			}
 			if (weight > (16 * 3) && weight <= (16 * 8)) {
@@ -68,7 +68,7 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > 9 && weight < 16) {
 				perMileRate = 0.0024;
 			}
-			if (weight > 16 && weight <= (16 * 3)) {
+			if (weight >= 16 && weight <= (16 * 3)) {
 				perMileRate = 0.0150;
 			}
 			if (weight > (16 * 3) && weight <= (16 * 8)) {
@@ -78,8 +78,10 @@ public class PostalService implements IDeliveryDriver {
 				perMileRate = 0.0170;
 			}
 		}
-		return BigDecimal.valueOf(BigDecimal.valueOf(perMileRate).multiply(distance)
-				.setScale(3, BigDecimal.ROUND_HALF_DOWN)
-				.doubleValue());
+		return new BigDecimal(perMileRate *distance).setScale(2, BigDecimal.ROUND_HALF_UP);
 	}
+	@Override
+	public String getCompanyName() {
+		return "Postal Service (" + perMileClass + ")";
+}
 }

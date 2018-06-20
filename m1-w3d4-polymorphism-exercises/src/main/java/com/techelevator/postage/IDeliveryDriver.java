@@ -7,5 +7,7 @@ import java.math.BigDecimal;
 
 public interface IDeliveryDriver {
 
-	BigDecimal calculateRate(BigDecimal distance, int weight);
+	BigDecimal calculateRate(int distance, int weight);
+	
+	String getCompanyName();
 }

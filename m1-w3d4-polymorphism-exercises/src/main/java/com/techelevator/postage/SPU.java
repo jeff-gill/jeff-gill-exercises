@@ -4,31 +4,34 @@ import java.math.BigDecimal;
 
 public class SPU implements IDeliveryDriver {
 
-	private BigDecimal rate4Day = new BigDecimal(0.0050);
-	private BigDecimal rate3Day = new BigDecimal(0.050);
-	private BigDecimal rateNextDay = new BigDecimal(0.075);
+	private double rate4Day = 0.0050;
+	private double rate3Day = 0.050;
+	private double rateNextDay = 0.075;
 	private String shippingRate;
-	private BigDecimal rate;
+
+	
 	
 	public SPU(String shippingRate) {
 		this.shippingRate = shippingRate;
 	}
 
-	public BigDecimal calculateRate(BigDecimal distance, int weight) {
+	@Override
+	public BigDecimal calculateRate(int distance, int weight) {
+		double calculatedRate = 0;
 		weight /= 160;
 		if (shippingRate == "four-day ground") {
-			BigDecimal rate = ((BigDecimal.valueOf(weight).multiply(rate4Day)).multiply(distance));
-			return rate;
-		} else if (shippingRate == "two-day business") {
-			rate = ((BigDecimal.valueOf(weight).multiply(rate3Day)).multiply(distance));
-			return rate;
-		} else if (shippingRate == "next day") {
-			rate = ((BigDecimal.valueOf(weight).multiply(rateNextDay)).multiply(distance));
-			return rate;
-		} else {
+			calculatedRate = ((weight * rate4Day) * distance);
 			
-			return rate;
+		} else if (shippingRate == "two-day business") {
+			calculatedRate = ((weight * rate3Day) * distance);
+		
+		} else if (shippingRate == "next day") {
+			calculatedRate = ((weight * rateNextDay) * distance);
 		}
+			return new BigDecimal(calculatedRate).setScale(2,BigDecimal.ROUND_HALF_UP);
+		}
+	@Override
+	public String getCompanyName() {
+		return "SPU (" + shippingRate + ")";
 	}
-
 }

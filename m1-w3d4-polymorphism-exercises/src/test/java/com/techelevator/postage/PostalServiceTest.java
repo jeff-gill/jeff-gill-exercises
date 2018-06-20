@@ -1,22 +1,12 @@
 package com.techelevator.postage;
 
+import java.math.BigDecimal;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PostalServiceTest {
-
-	private PostalService firstClassPostalService;
-	private PostalService secondClassPostalService;
-	private PostalService thirdClassPostalService;
-
-	@Before
-	public void setup() {
-		firstClassPostalService = new PostalService("1st Class");
-		secondClassPostalService = new PostalService("2nd Class");
-		thirdClassPostalService = new PostalService("3rd Class");
-
-	}
 
 	@Test
 	public void verify_calculate_rate_for_1st_class_first_tier() {
@@ -53,7 +43,7 @@ public class PostalServiceTest {
 		double calculateRate = firstClassPostalService.calculateRate(10, 160);
 		Assert.assertEquals(5.00, calculateRate, 0);
 	}
-	
+
 	@Test
 	public void verify_calculate_rate_for_2nd_class_first_tier() {
 		double calculateRate = secondClassPostalService.calculateRate(10, 1);
@@ -89,11 +79,7 @@ public class PostalServiceTest {
 		double calculateRate = secondClassPostalService.calculateRate(10, 160);
 		Assert.assertEquals(0.500, calculateRate, 0);
 	}
-	
-	
-	
-	
-	
+
 	@Test
 	public void verify_calculate_rate_for_3rd_class_first_tier() {
 		double calculateRate = thirdClassPostalService.calculateRate(10, 1);
@@ -113,20 +99,33 @@ public class PostalServiceTest {
 	}
 
 	@Test
-	public void verify_calculate_rate_for_3rd_class_fourth_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 17);
-		Assert.assertEquals(0.150, calculateRate, 0);
+	public void verify_calculate_rate_for_3rd_class_fourth_tier_lower_limit() {
+		verify_rate_is_correct("3rd Class", 15, 16, (15 * 0.0150));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_3rd_class_fifth_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 54);
-		Assert.assertEquals(0.160, calculateRate, 0);
+	public void verify_calculate_rate_for_3rd_class_fourth_tier_upper_limit() {
+		verify_rate_is_correct("3rd Class", 15, (3 * 16), (15 * 0.0150));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_3rd_class_fifth_tier_lower_limit() {
+		verify_rate_is_correct("3rd Class", 15, (4 * 16), (15 * 0.0160));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_3rd_class_fifth_tier_upper_limit() {
+		verify_rate_is_correct("3rd Class", 15, (8 * 16), (15 * 0.0160));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_sixth_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 160);
-		Assert.assertEquals(0.170, calculateRate, 0);
+		verify_rate_is_correct("3rd Class", 15, (9 * 16), (15 * 0.0170));
+	}
+
+	private void verify_rate_is_correct(String rateClass, int distance, int weight, double expectedRate) {
+		IDeliveryDriver postalService = new PostalService(rateClass);
+		BigDecimal calculateRate = postalService.calculateRate(distance, weight);
+		Assert.assertEquals(new BigDecimal(expectedRate).setScale(2, BigDecimal.ROUND_HALF_UP), calculateRate);
 	}
 }

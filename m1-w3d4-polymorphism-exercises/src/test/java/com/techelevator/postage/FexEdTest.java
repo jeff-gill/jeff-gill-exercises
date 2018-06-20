@@ -1,5 +1,7 @@
 package com.techelevator.postage;
 
+import java.math.BigDecimal;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,30 +13,31 @@ public class FexEdTest {
 
 	@Before
 	public void setup() {
-		standardRate = new FexEd(20.00);
+		standardRate = new FexEd();
 	}
 
 	@Test
 	public void verify_shipping_rate_with_close_distance_and_low_weight() {
-		double calculateRate = standardRate.calculateRate(1, 1);
-		Assert.assertEquals(20.00, calculateRate, 0);
+		this.verify_rate_is_correct(500, 48, 20);
 	}
 
 	@Test
 	public void verify_shipping_rate_with_far_distance_and_low_weight() {
-		double calculateRate = standardRate.calculateRate(600, 1);
-		Assert.assertEquals(25.00, calculateRate, 0);
+		this.verify_rate_is_correct(501,48, 25);
 	}
 
 	@Test
 	public void verify_shipping_rate_with_close_distance_and_high_weight() {
-		double calculateRate = standardRate.calculateRate(1, 50);
-		Assert.assertEquals(23.00, calculateRate, 0);
+		this.verify_rate_is_correct(500, 49, 23);
 	}
 
 	@Test
 	public void verify_shipping_rate_with_far_distance_and_high_weight() {
-		double calculateRate = standardRate.calculateRate(600, 50);
-		Assert.assertEquals(28.00, calculateRate, 0);
+		this.verify_rate_is_correct(501, 49, 28);
+	}
+	
+	private void verify_rate_is_correct(int distance, int weight, double expectedRate) {
+		BigDecimal calculateRate = standardRate.calculateRate(distance, weight);
+		Assert.assertEquals(new BigDecimal(expectedRate).setScale(2, BigDecimal.ROUND_HALF_UP), calculateRate);
 	}
 }
