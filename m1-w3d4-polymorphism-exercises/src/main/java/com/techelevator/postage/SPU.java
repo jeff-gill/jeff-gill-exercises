@@ -5,30 +5,30 @@ import java.math.BigDecimal;
 public class SPU implements IDeliveryDriver {
 
 	private double rate4Day = 0.0050;
-	private double rate3Day = 0.050;
+	private double rate2Day = 0.050;
 	private double rateNextDay = 0.075;
 	private String shippingRate;
 
-	
-	
 	public SPU(String shippingRate) {
 		this.shippingRate = shippingRate;
 	}
 
 	@Override
 	public BigDecimal calculateRate(int distance, int weight) {
-		double calculatedRate = 0;
-		weight /= 160;
+		weight = weight / 16;
+		double calculatedRates = 0;
+	
 		if (shippingRate == "four-day ground") {
-			calculatedRate = ((weight * rate4Day) * distance);
+			calculatedRates = (weight * rate4Day);
 			
 		} else if (shippingRate == "two-day business") {
-			calculatedRate = ((weight * rate3Day) * distance);
+			calculatedRates = (weight * rate2Day);
 		
 		} else if (shippingRate == "next day") {
-			calculatedRate = ((weight * rateNextDay) * distance);
+			calculatedRates = (weight * rateNextDay);
 		}
-			return new BigDecimal(calculatedRate).setScale(2,BigDecimal.ROUND_HALF_UP);
+		BigDecimal calculatedRate = new BigDecimal(calculatedRates * distance).setScale(2,BigDecimal.ROUND_HALF_UP);
+		return calculatedRate;
 		}
 	@Override
 	public String getCompanyName() {

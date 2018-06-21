@@ -23,7 +23,7 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > 2 && weight < 9) {
 				perMileRate = 0.040;
 			}
-			if (weight > 9 && weight < 16) {
+			if (weight >= 9 && weight < 16) {
 				perMileRate = 0.047;
 			}
 			if (weight >= 16 && weight <= (16 * 3)) {
@@ -45,10 +45,10 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > 2 && weight < 9) {
 				perMileRate = 0.0040;
 			}
-			if (weight > 9 && weight < 16) {
+			if (weight >= 9 && weight < 16) {
 				perMileRate = 0.0047;
 			}
-			if (weight > 16 && weight <= (16 * 3)) {
+			if (weight >= 16 && weight <= (16 * 3)) {
 				perMileRate = 0.0195;
 			}
 			if (weight > (16 * 3) && weight <= (16 * 8)) {
@@ -65,7 +65,7 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > 2 && weight < 9) {
 				perMileRate = 0.0022;
 			}
-			if (weight > 9 && weight < 16) {
+			if (weight >= 9 && weight < 16) {
 				perMileRate = 0.0024;
 			}
 			if (weight >= 16 && weight <= (16 * 3)) {
@@ -74,7 +74,7 @@ public class PostalService implements IDeliveryDriver {
 			if (weight > (16 * 3) && weight <= (16 * 8)) {
 				perMileRate = 0.0160;
 			}
-			if (weight >= (16 * 9)) {
+			if (weight >= (16 * 9)) {	
 				perMileRate = 0.0170;
 			}
 		}

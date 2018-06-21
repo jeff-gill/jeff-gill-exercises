@@ -3,124 +3,173 @@ package com.techelevator.postage;
 import java.math.BigDecimal;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class PostalServiceTest {
 
 	@Test
-	public void verify_calculate_rate_for_1st_class_first_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 1);
-		Assert.assertEquals(0.35, calculateRate, 0);
+	public void verify_calculate_rate_for_1st_class_first_tier_lower_limit() {
+		verify_rate_is_correct("1st Class", 340, 1, (340 * 0.035));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_1st_class_second_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 3);
-		Assert.assertEquals(0.40, calculateRate, 0);
+	public void verify_calculate_rate_for_1st_class_first_tier_upper_limit() {
+		verify_rate_is_correct("1st Class", 340, 2, (340 * 0.035));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_1st_class_third_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 10);
-		Assert.assertEquals(0.47, calculateRate, 0);
+	public void verify_calculate_rate_for_1st_class_second_tier_lower_limit() {
+		verify_rate_is_correct("1st Class", 340, 3, (340 * 0.040));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_1st_class_fourth_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 17);
-		Assert.assertEquals(1.95, calculateRate, 0);
+	public void verify_calculate_rate_for_1st_class_second_tier_upper_limit() {
+		verify_rate_is_correct("1st Class", 340, 8, (340 * 0.040));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_1st_class_fifth_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 54);
-		Assert.assertEquals(4.50, calculateRate, 0);
+	public void verify_calculate_rate_for_1st_class_third_tier_lower_limit() {
+		verify_rate_is_correct("1st Class", 340, 9, (340 * 0.047));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_1st_class_third_tier_upper_limit() {
+		verify_rate_is_correct("1st Class", 340, 15, (340 * 0.047));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_1st_class_fourth_tier_lower_limit() {
+		verify_rate_is_correct("1st Class", 340, 16, (340 * 0.195));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_1st_class_fourth_tier_upper_limit() {
+		verify_rate_is_correct("1st Class", 340, (3 * 16), (340 * 0.195));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_1st_class_fifth_tier_lower_limit() {
+		verify_rate_is_correct("1st Class", 340, (4 * 16), (340 * 0.450));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_1st_class_fifth_tier_upper_limit() {
+		verify_rate_is_correct("1st Class", 340, (8 * 16), (340 * 0.450));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_1st_class_sixth_tier() {
-		double calculateRate = firstClassPostalService.calculateRate(10, 160);
-		Assert.assertEquals(5.00, calculateRate, 0);
+		verify_rate_is_correct("1st Class", 340, (9 * 16), (340 * 0.500));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_2nd_class_first_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 1);
-		Assert.assertEquals(0.035, calculateRate, 0);
+	public void verify_calculate_rate_for_2nd_class_first_tier_lower_limit() {
+		verify_rate_is_correct("2nd Class", 340, 1, (340 * 0.0035));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_2nd_class_second_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 3);
-		Assert.assertEquals(0.040, calculateRate, 0);
+	public void verify_calculate_rate_for_2nd_class_first_tier_upper_limit() {
+		verify_rate_is_correct("2nd Class", 340, 2, (340 * 0.0035));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_2nd_class_third_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 10);
-		Assert.assertEquals(0.047, calculateRate, 0);
+	public void verify_calculate_rate_for_2nd_class_second_tier_lower_limit() {
+		verify_rate_is_correct("2nd Class", 340, 3, (340 * 0.0040));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_2nd_class_fourth_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 17);
-		Assert.assertEquals(0.195, calculateRate, 0);
+	public void verify_calculate_rate_for_2nd_class_second_tier_upper_limit() {
+		verify_rate_is_correct("2nd Class", 340, 8, (340 * 0.0040));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_2nd_class_fifth_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 54);
-		Assert.assertEquals(0.450, calculateRate, 0);
+	public void verify_calculate_rate_for_2nd_class_third_tier_lower_limit() {
+		verify_rate_is_correct("2nd Class", 340, 9, (340 * 0.0047));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_2nd_class_third_tier_upper_limit() {
+		verify_rate_is_correct("2nd Class", 340, 15, (340 * 0.0047));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_2ndclass_fourth_tier_lower_limit() {
+		verify_rate_is_correct("2nd Class", 340, 16, (340 * 0.0195));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_2nd_class_fourth_tier_upper_limit() {
+		verify_rate_is_correct("2nd Class", 340, (3 * 16), (340 * 0.0195));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_2nd_class_fifth_tier_lower_limit() {
+		verify_rate_is_correct("2nd Class", 340, (4 * 16), (340 * 0.0450));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_2nd_class_fifth_tier_upper_limit() {
+		verify_rate_is_correct("2nd Class", 340, (8 * 16), (340 * 0.0450));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_2nd_class_sixth_tier() {
-		double calculateRate = secondClassPostalService.calculateRate(10, 160);
-		Assert.assertEquals(0.500, calculateRate, 0);
+		verify_rate_is_correct("2nd Class", 340, (9 * 16), (340 * 0.0500));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_3rd_class_first_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 1);
-		Assert.assertEquals(0.020, calculateRate, 0);
+	public void verify_calculate_rate_for_3rd_class_first_tier_lower_limit() {
+		verify_rate_is_correct("3rd Class", 340, 1, (340 * 0.0020));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_3rd_class_second_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 3);
-		Assert.assertEquals(0.022, calculateRate, 0);
+	public void verify_calculate_rate_for_3rd_class_first_tier_upper_limit() {
+		verify_rate_is_correct("3rd Class", 340, 2, (340 * 0.0020));
 	}
 
 	@Test
-	public void verify_calculate_rate_for_3rd_class_third_tier() {
-		double calculateRate = thirdClassPostalService.calculateRate(10, 10);
-		Assert.assertEquals(0.024, calculateRate, 0);
+	public void verify_calculate_rate_for_3rd_class_second_tier_lower_limit() {
+		verify_rate_is_correct("3rd Class", 340, 3, (340 * 0.0022));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_3rd_class_second_tier_upper_limit() {
+		verify_rate_is_correct("3rd Class", 340, 8, (340 * 0.0022));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_3rd_class_third_tier_lower_limit() {
+		verify_rate_is_correct("3rd Class", 340, 9, (340 * 0.0024));
+	}
+
+	@Test
+	public void verify_calculate_rate_for_3rd_class_third_tier_upper_limit() {
+		verify_rate_is_correct("3rd Class", 340, 15, (340 * 0.0024));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_fourth_tier_lower_limit() {
-		verify_rate_is_correct("3rd Class", 15, 16, (15 * 0.0150));
+		verify_rate_is_correct("3rd Class", 340, 16, (340 * 0.0150));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_fourth_tier_upper_limit() {
-		verify_rate_is_correct("3rd Class", 15, (3 * 16), (15 * 0.0150));
+		verify_rate_is_correct("3rd Class", 340, (3 * 16), (340 * 0.0150));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_fifth_tier_lower_limit() {
-		verify_rate_is_correct("3rd Class", 15, (4 * 16), (15 * 0.0160));
+		verify_rate_is_correct("3rd Class", 340, (4 * 16), (340 * 0.0160));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_fifth_tier_upper_limit() {
-		verify_rate_is_correct("3rd Class", 15, (8 * 16), (15 * 0.0160));
+		verify_rate_is_correct("3rd Class", 340, (8 * 16), (340 * 0.0160));
 	}
 
 	@Test
 	public void verify_calculate_rate_for_3rd_class_sixth_tier() {
-		verify_rate_is_correct("3rd Class", 15, (9 * 16), (15 * 0.0170));
+		verify_rate_is_correct("3rd Class", 340, (9 * 16), (340 * 0.0170));
 	}
 
 	private void verify_rate_is_correct(String rateClass, int distance, int weight, double expectedRate) {

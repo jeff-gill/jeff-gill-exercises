@@ -1,6 +1,5 @@
 package com.techelevator.postage;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,8 +16,8 @@ public class PostageMain {
 			int weightAmount = (int) (Double.parseDouble(in.nextLine()));
 			System.out.print("(P)ounds or (O)unces?: ");
 			String weightType = in.nextLine().toUpperCase();
-			if (weightType.equals("P")) {
-				weightAmount /= 16;
+			if (weightType.equals("o")) {
+				weightAmount *= 16;
 			}
 			System.out.print("What distance will it be traveling?: ");
 			int distanceTraveling = (int) (Double.parseDouble(in.nextLine()));
@@ -35,12 +34,13 @@ public class PostageMain {
 			deliveryCompanies.add(new SPU("four-day ground"));
 			deliveryCompanies.add(new SPU("two-day business"));
 			deliveryCompanies.add(new SPU("next day"));
-			
-			for(IDeliveryDriver company: deliveryCompanies) {
+
+			for (IDeliveryDriver company : deliveryCompanies) {
 				System.out.format("%1s%7s%1s\n", company.getCompanyName(), "$",
 						(company.calculateRate(distanceTraveling, weightAmount)));
 			}
-			}
+			System.out.println();
+		}
 
 	}
 }
