@@ -47,6 +47,7 @@ where film_id in (select film_id from category where category_id = 17)
 
 -- 7. Add a copy of "Euclidean PI" to all the stores.
 
+
 insert into inventory (film_id, store_ID)
 values (1001, 1)
 
@@ -70,7 +71,8 @@ no. because it is now tied to the film actor table and the inventory table
 Delete from category
 where category_id =  17
 
-no. because it is tied to the film table for ratings
+not at first. because it needed to be deleted from film_category first.
+i did exercise 10, then came back and it worked.
 
 -- 10. Delete all links to Mathmagical in the film_category tale. 
 -- (Did it succeed? Why?
@@ -79,7 +81,7 @@ no. because it is tied to the film table for ratings
 Delete from film_category
 where category_id =  17
 
-no. because it is tied to the film table for ratings)
+yes. 
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
 -- to delete "Euclidean PI". 
@@ -87,12 +89,12 @@ no. because it is tied to the film table for ratings)
 
 
 delete from category
-where category = 'Mathmagical'
+where name = 'Mathmagical'
 
-no. it is still ties to film_category table
+this worked above
 
 delete from film
 where title like 'Euclidean PI'
 
-no. it istiedto the film_actor table
+no. need to delete the key from fim_actor first
 

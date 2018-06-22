@@ -15,19 +15,20 @@ public class SPU implements IDeliveryDriver {
 
 	@Override
 	public BigDecimal calculateRate(int distance, int weight) {
-		weight = weight / 16;
-		double calculatedRates = 0;
+		double weightInPounds = (weight / 16.0);
+	
+		double rate = 0;
 	
 		if (shippingRate == "four-day ground") {
-			calculatedRates = (weight * rate4Day);
+			rate = rate4Day;
 			
 		} else if (shippingRate == "two-day business") {
-			calculatedRates = (weight * rate2Day);
+			rate = rate2Day;
 		
 		} else if (shippingRate == "next day") {
-			calculatedRates = (weight * rateNextDay);
+			rate = rateNextDay;
 		}
-		BigDecimal calculatedRate = new BigDecimal(calculatedRates * distance).setScale(2,BigDecimal.ROUND_HALF_UP);
+		BigDecimal calculatedRate = new BigDecimal(rate* weightInPounds * distance).setScale(2,BigDecimal.ROUND_HALF_UP);
 		return calculatedRate;
 		}
 	@Override
