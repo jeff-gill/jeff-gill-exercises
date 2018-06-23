@@ -116,7 +116,7 @@ public class PostalServiceTest {
 	public void verify_calculate_rate_for_2nd_class_sixth_tier() {
 		verify_rate_is_correct("2nd Class", 340, (9 * 16), (340 * 0.0500));
 	}
-
+	
 	@Test
 	public void verify_calculate_rate_for_3rd_class_first_tier_lower_limit() {
 		verify_rate_is_correct("3rd Class", 340, 1, (340 * 0.0020));

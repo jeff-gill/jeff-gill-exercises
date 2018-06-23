@@ -85,7 +85,7 @@ calculateToll( distance )
 
 #### Implementing Classes
     
-##### Car
+##### Car6
 
 Tolls for cars are based upon distance.
 

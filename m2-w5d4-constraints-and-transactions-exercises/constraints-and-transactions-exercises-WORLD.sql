@@ -29,7 +29,8 @@ update country set capital = 4080
 Delete from city
 where name = 'Smallville' 
 
-NO. [Code: , SQL State: 23503]  ERROR: update or delete on table "city" violates foreign key constraint "country_capital_fkey" on table "country"
+NO. [
+  Code: , SQL State: 23503]  ERROR: update or delete on table "city" violates foreign key constraint "country_capital_fkey" on table "country"
   Detail: Key (id)=(4080) is still referenced from table "country".
   
   need to remove it from the US capital field on the country table

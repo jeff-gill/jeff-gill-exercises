@@ -1,4 +1,4 @@
-package com.techelevator.vehicle;
+package com.techelevator.vehicle_old;
 
 public class Car implements IVehicle {
 
@@ -6,24 +6,27 @@ public class Car implements IVehicle {
 	private int numberOfAxels;
 	private double rate;
 	private int distance;
+	private String trailerStatus;
 
-	public Car(double toll, int numberOfAxels, int distance) {
+	public Car(double toll, int numberOfAxels, int distance, String trailerStatus) {
 		this.setToll(toll);
 		this.setNumberOfAxels(numberOfAxels);
 		this.distance = distance;
 
 	}
 
+	public Car(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Double calculateToll(double toll, boolean trailer) {
-		if (trailer = false) {
+		if (VehicleMain.getTrailerStatus = "NO") {
 			toll = (distance * 0.020);
-		if (trailer = true) {
-			toll =((distance * 0.020) + 1.00);
+		}
+		if (VehicleMain.trailerStatus = "YES") {
+			toll = ((distance * 0.020) + 1.00);
 		}
 		return toll;
-		}
-		return toll;
-			
 	}
 
 	public double getToll() {
@@ -62,5 +65,10 @@ public class Car implements IVehicle {
 		return null;
 	}
 
+	@Override
+	public String getVehicleName() {
 
+		return "Car";
+
+	}
 }

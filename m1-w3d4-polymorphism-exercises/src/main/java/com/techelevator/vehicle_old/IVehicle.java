@@ -1,4 +1,4 @@
-package com.techelevator.vehicle;
+package com.techelevator.vehicle_old;
 
 public interface IVehicle {
 
@@ -6,5 +6,5 @@ public interface IVehicle {
 	
 	Integer calculateToll(int toll);
 
-	
+	String getVehicleName();
 }

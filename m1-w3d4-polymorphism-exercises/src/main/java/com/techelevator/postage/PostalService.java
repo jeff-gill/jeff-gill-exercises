@@ -78,7 +78,7 @@ public class PostalService implements IDeliveryDriver {
 				perMileRate = 0.0170;
 			}
 		}
-		return new BigDecimal(perMileRate *distance).setScale(2, BigDecimal.ROUND_HALF_UP);
+		return new BigDecimal(perMileRate * distance).setScale(2, BigDecimal.ROUND_HALF_UP);
 	}
 	@Override
 	public String getCompanyName() {

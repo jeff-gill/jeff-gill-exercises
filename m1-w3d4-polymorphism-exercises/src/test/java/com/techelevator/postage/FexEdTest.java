@@ -9,6 +9,7 @@ import org.junit.Test;
 public class FexEdTest {
 
 	private FexEd standardRate;
+	
 
 	@Before
 	public void setup() {
@@ -22,7 +23,7 @@ public class FexEdTest {
 
 	@Test
 	public void verify_shipping_rate_with_far_distance_and_low_weight() {
-		this.verify_rate_is_correct(501, 48, 25);
+		this.verify_rate_is_correct(501,48, 25);
 	}
 
 	@Test
@@ -34,7 +35,7 @@ public class FexEdTest {
 	public void verify_shipping_rate_with_far_distance_and_high_weight() {
 		this.verify_rate_is_correct(501, 49, 28);
 	}
-
+	
 	private void verify_rate_is_correct(int distance, int weight, double expectedRate) {
 		BigDecimal calculateRate = standardRate.calculateRate(distance, weight);
 		Assert.assertEquals(new BigDecimal(expectedRate).setScale(2, BigDecimal.ROUND_HALF_UP), calculateRate);

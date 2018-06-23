@@ -1,4 +1,4 @@
-package com.techelevator.vehicle;
+package com.techelevator.vehicle_old;
 
 public class Tank implements IVehicle {
 
@@ -48,6 +48,12 @@ public class Tank implements IVehicle {
 
 	public void setRate(double rate) {
 		this.rate = rate;
+	}
+	@Override
+	public String getVehicleName() {
+
+		return "Tank";
+
 	}
 
 

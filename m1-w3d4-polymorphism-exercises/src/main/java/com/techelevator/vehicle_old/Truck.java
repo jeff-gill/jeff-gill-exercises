@@ -1,4 +1,4 @@
-package com.techelevator.vehicle;
+package com.techelevator.vehicle_old;
 
 public class Truck implements IVehicle {
 
@@ -39,6 +39,12 @@ public class Truck implements IVehicle {
 	}
 
 	public void setDistance(int distance) {
+	}
+	@Override
+	public String getVehicleName() {
+
+		return "Truck";
+
 	}
 
 
