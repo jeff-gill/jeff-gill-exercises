@@ -54,7 +54,7 @@ create table employee_department (
         constraint fk2_employee_id foreign key (employee_id) references employee(employee_id)
 );
 
-create table project_department (
+create table employee_project (
         project_id int,  --int because it's pulling from another table with data type serial as primary key
         employee_id int,  --int because it's pulling from another table with data type serial as primary key
         
@@ -147,4 +147,118 @@ insert into employee (job_title_id, last_name, first_name, gender_initial, birth
 insert into employee (job_title_id, last_name, first_name, gender_initial, birthday, hire_date, department_id)
         values (6, 'McPollerson', 'Polly', 'M', date '12/16/1997', date '11/09/2014', 2)
 
-       
+Select* from employee_project
+
+insert into employee_project (employee_id,project_id)
+        values (1, 1)
+
+insert into employee_project (employee_id,project_id)
+        values (1, 2)
+
+insert into employee_project (employee_id,project_id)
+        values (1, 4)
+
+insert into employee_project (employee_id,project_id)
+        values (2, 3)
+  
+insert into employee_project (employee_id,project_id)
+        values (2, 4)
+        
+insert into employee_project (employee_id,project_id)
+        values (2, 5)
+        
+insert into employee_project (employee_id,project_id)
+        values (3, 2)      
+
+insert into employee_project (employee_id,project_id)
+        values (3, 4)
+
+insert into employee_project (employee_id,project_id)
+        values (3, 5)
+
+insert into employee_project (employee_id,project_id)
+        values (4, 1)        
+
+insert into employee_project (employee_id,project_id)
+        values (4, 3)        
+        
+insert into employee_project (employee_id,project_id)
+        values (4, 4)        
+
+insert into employee_project (employee_id,project_id)
+        values (5, 1)
+
+insert into employee_project (employee_id,project_id)
+        values (5, 3)
+
+insert into employee_project (employee_id,project_id)
+        values (5, 4)
+
+insert into employee_project (employee_id,project_id)
+        values (5, 5)
+
+insert into employee_project (employee_id,project_id)
+        values (6, 1)
+
+insert into employee_project (employee_id,project_id)
+        values (6, 2)
+
+insert into employee_project (employee_id,project_id)
+        values (6, 3)
+
+insert into employee_project (employee_id,project_id)
+        values (6, 4)
+        
+insert into employee_project (employee_id,project_id)
+        values (6, 5)
+        
+insert into employee_project (employee_id,project_id)
+        values (7, 1)
+        
+insert into employee_project (employee_id,project_id)
+        values (7, 3)
+            
+insert into employee_project (employee_id,project_id)
+        values (7, 4)
+        
+insert into employee_project (employee_id,project_id)
+        values (7, 5)
+        
+insert into employee_project (employee_id,project_id)
+        values (8, 1)
+        
+insert into employee_project (employee_id,project_id)
+        values (8, 2)
+        
+insert into employee_project (employee_id,project_id)
+        values (8, 3)
+        
+insert into employee_project (employee_id,project_id)
+        values (8, 4)
+    
+ select * from employee_department
+ 
+insert into employee_department (employee_id, department_id)
+        values (1, 1)     
+  
+insert into employee_department (employee_id, department_id)
+        values (2, 1)     
+   
+insert into employee_department (employee_id, department_id)
+        values (3, 2)     
+    
+insert into employee_department (employee_id, department_id)
+        values (4, 2)     
+  
+insert into employee_department (employee_id, department_id)
+        values (5, 3)     
+  
+insert into employee_department (employee_id, department_id)
+        values (6, 4)     
+  
+insert into employee_department (employee_id, department_id)
+        values (7, 4)     
+  
+insert into employee_department (employee_id, department_id)
+        values (8, 2)     
+      
