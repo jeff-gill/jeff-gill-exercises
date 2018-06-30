@@ -2,6 +2,7 @@ create database projectorganizer
 
 drop table project_department
 drop table employee_department
+drop table employee_project
 drop table project
 drop table employee
 drop table job_title
@@ -53,6 +54,7 @@ create table employee_department (
         constraint fk1_department_id foreign key (department_id) references department(department_id),
         constraint fk2_employee_id foreign key (employee_id) references employee(employee_id)
 );
+
 
 create table employee_project (
         project_id int,  --int because it's pulling from another table with data type serial as primary key
@@ -262,3 +264,4 @@ insert into employee_department (employee_id, department_id)
 insert into employee_department (employee_id, department_id)
         values (8, 2)     
       
+select * from employee

@@ -1,3 +1,6 @@
+//Exercises
+//ProjectsCLI
+
 package com.techelevator.projects;
 
 import java.util.List;
@@ -118,7 +121,7 @@ public class ProjectsCLI {
 	}
 
 	private void handleAddDepartment() {
-		printHeading("Add New Department");
+		printHeading("Add 1New Department");
 		String newDepartmentName = getUserInput("Enter new Department name");
 		Department newDepartment = new Department();
 		newDepartment.setName(newDepartmentName);

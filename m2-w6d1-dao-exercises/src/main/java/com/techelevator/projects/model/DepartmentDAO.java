@@ -1,6 +1,11 @@
+//Exercises
+//DepartmentDAO
+
 package com.techelevator.projects.model;
 
 import java.util.List;
+
+import com.techelevator.projects.model.*;
 
 public interface DepartmentDAO {
 
