@@ -19,3 +19,8 @@ Convert your existing pages to use a shared layout view so that you are not repe
 Make the list, tile, and table view have clickable links that redirect the user to the product specific detail view. Suggestions include making the image clickable, the product name clickable, etc.
 
 Implement the [Detail View](etc/day2/product-detail-individual.png) for the individual product.
+
+
+
+//  <c: foreach var ="products" items="${productList}" >
+//  <c: foreach var =${product.name} items="${productList}" >

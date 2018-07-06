@@ -26,12 +26,14 @@ li {
 			 
 			See exercise3-echo.png for example output
 		 --%>
-		<c:set var="word" value="Hellooo" />
-		<c:set var="counts" value="8" />
-		<c:forEach begin="1" end="8" var="count">
-			<font size="${counts-count}">
-				<li>${word}</li>
-			</font>
+
+		<c:set var="word" value="${param.word}" />
+		<c:set var="count" value = "${param.count}" />
+		<c:forEach begin="1" end="20" var="line">
+				<li style="font-size:${count - line}px">${word}</li>
+				<c:set var ="count" value="${count}" />
+		
+		
 		</c:forEach>
 	</ul>
 
