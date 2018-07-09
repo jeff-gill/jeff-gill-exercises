@@ -28,7 +28,7 @@ nav ul {
 
 nav li {
 	list-style-type: none;
-	color: white;
+	color: black;
 	margin-left: 25px;
 	margin-bottom: 10px;
 	font-size: 1.3em;
@@ -45,7 +45,7 @@ nav li a:hover {
 	text-decoration: underline;
 }
 
-section {
+ #product-list {
 	clear: both;
 	display: block;
 	width: 80%;
@@ -55,4 +55,7 @@ section {
 	min-height: 450px;
 	background-color: #FFF;
 	border-radius: 7px;
+} 
+.product-group {
+	display: inline-block;
 }

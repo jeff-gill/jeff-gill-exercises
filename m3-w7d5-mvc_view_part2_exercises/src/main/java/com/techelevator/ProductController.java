@@ -38,7 +38,7 @@ public class ProductController {
 			}
 		}
 		return "productDetail";
-	}
+	} 
 	
 	private List<Product> getProducts() {
 		List<Product> products = new ArrayList<Product>();
