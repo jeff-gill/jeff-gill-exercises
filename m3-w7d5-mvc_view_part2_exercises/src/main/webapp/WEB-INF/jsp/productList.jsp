@@ -28,17 +28,20 @@
 	</nav>
 	<section id="product-list">
 		<h1 style="font-size: 21px" align=center>Toy Department</h1>
-		<p>
+		<div class="pix">
 			<c:forEach var="product" items="${productList}">
 				<div class="product-group">
-				<div id = "product-pic">
 					<a> <img style="width: 13em" alt="toy-balls"
 						src="img/${product.imageName}">
 					</a>
-				</div>	
-				
-				<div class= "product-info">
-					<a> <b>${product.name}</b> 
+				</div>
+			</c:forEach>
+		</div>
+		<div class="deets">
+			<c:forEach var="product" items="${productList}">
+				<div class="product-info">
+					<div>
+						<b>${product.name}</b>
 						<c:choose>
 							<c:when test="${product.topSeller == true}">
 								<c:set var="bestSeller" value="BEST SELLER!" />
@@ -46,19 +49,24 @@
 							<c:otherwise>
 								<c:set var="bestSeller" value="" />
 							</c:otherwise>
-						</c:choose> 		
-						<b><font size="2px" color="red"> ${bestSeller}</font></b> 
-					</a><br>	
-					<a>by ${product.manufacturer}</a> 
-					<a><br /> <font size="4.5px" color="red">$${product.price}</font> </a>
-					<a><br /><b>Weight</b>${product.weightInLbs} Lbs </a>
-					<a> <fmt:formatNumber var="rating" type="number" maxFractionDigits="0"
-							value="${product.averageRating}" /><br /> <img
-						style="width: 150px" src="img/${rating}-star.png" /></a>
-				</div>
+						</c:choose>
+						<b><font size="2px" color="red"> ${bestSeller}</font></b>
+					</div>
+					<div>by ${product.manufacturer}</div>
+					<div>
+						<font size="4.5px" color="red">$${product.price}</font>
+					</div>
+					<div>
+						<b>Weight</b>${product.weightInLbs} Lbs
+					</div>
+					<div>
+						<fmt:formatNumber var="rating" type="number" maxFractionDigits="0"
+							value="${product.averageRating}" />
+						<img style="width: 150px" src="img/${rating}-star.png" />
+					</div>
 				</div>
 			</c:forEach>
-		</p>	
+		</div>
 	</section>
 
 </body>

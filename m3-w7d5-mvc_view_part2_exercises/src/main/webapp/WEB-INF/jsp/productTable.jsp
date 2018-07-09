@@ -5,17 +5,17 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product Table View</title>
-    <link rel="stylesheet" href="css/site.css" />
+<meta name="viewport" content="width=device-width" />
+<title>Product Table View</title>
+<link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a style="font-size: 14px"
+	<header>
+		<h1>MVC Exercises - Views Part 2: Models</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a style="font-size: 14px"
 				href="http://localhost:8080/mvc-views-part2-exercises/productList">List
 					Layout</a></li>
 			<li><a style="font-size: 14px"
@@ -24,37 +24,95 @@
 			<li><a style="font-size: 14px"
 				href="http://localhost:8080/mvc-views-part2-exercises/productTable">Table
 					Layout</a></li>
-        </ul>
-        
-    </nav>
-<section id="main-content">
+		</ul>
+
+	</nav>
+	<section id="main-content">
 		<h1 style="font-size: 21px" align=center>Toy Department</h1>
-		<c:forEach var="product" items="${productList}">
-			<div>
-				<a> <img style="width: 200px" alt="toy-balls"
-					src="img/${product.imageName}">
-				</a>
-				<div>
-					<a> <b>${product.name}</b> <c:choose>
+		<table>
+			<tr>
+			<td id ="left-column"> </td>
+				<c:forEach var="product" items="${productList}">
+					<td><img style="width: 8em" src="img/${product.imageName}"></td>
+
+				</c:forEach>
+			</tr>
+			<tr id="text-box">
+			<td id ="left-column"></td>
+				<c:forEach var="product" items="${productList}">
+					<td><c:choose>
 							<c:when test="${product.topSeller == true}">
 								<c:set var="bestSeller" value="BEST SELLER!" />
 							</c:when>
 							<c:otherwise>
 								<c:set var="bestSeller" value="" />
 							</c:otherwise>
-						</c:choose> <b><font size="2px" color="red"> ${bestSeller}</font></b>
-					</a>
-				</div>
-				<a>by ${product.manufacturer}</a> <a><br /> <font size="4.5px"
-					color="red">$${product.price}</font> </a> <a><br /> <b>Weight</b>
-					${product.weightInLbs} Lbs </a> <a> <fmt:formatNumber var="rating"
-						type="number" maxFractionDigits="0"
-						value="${product.averageRating}" /><br /> <img
-					style="width: 150px" src="img/${rating}-star.png" />
-			</div>
-			<br />
-		</c:forEach>
+						</c:choose> <b><font size="2px" color="red"> ${bestSeller}</font></b></td>
+				</c:forEach>
+				
+			</tr>
+			<tr id ="left-column">
+				<td> Name </td>
+				<c:forEach var="product" items="${productList}">
+					<td id="product-name" style="background-color: lightgray" align="center" >${product.name}</td>
+
+				</c:forEach>
+			</tr>
+			<tr>
+			<td id ="left-column"> Rating </td>
+				<c:forEach var="product" items="${productList}">
+					<td><fmt:formatNumber var="rating" type="number"
+							maxFractionDigits="0" value="${product.averageRating}" /> <img
+						style="width: 150px" src="img/${rating}-star.png" /></td>
+				</c:forEach>
+			</tr>
+			<tr id="product-mfg" >
+				<td id ="left-column"> Mfg. </td>
+				<c:forEach var="product" items="${productList}">
+					<td style="background-color: lightgray" align="center" >by ${product.manufacturer}</td>
+				</c:forEach>
+			</tr>
+			<tr>
+			<td id ="left-column"> Price </td>
+				<c:forEach var="product" items="${productList}">
+					<td><font color="red"><b> $${product.price}</b></font></td>
+				</c:forEach>
+			</tr>
+			<tr>
+			<td id ="left-column"> wt. (in lbs) </td>
+				<c:forEach var="product" items="${productList}">
+					<td id="product-weight" style="background-color: lightgray" align="center" >${product.weightInLbs} lbs</td>
+				</c:forEach>
+			</tr>
+		</table>
 	</section>
 
 </body>
 </html>
+
+<%-- 
+<table>
+			<
+			<tr>
+				
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+						by ${product.manufacturer}
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<div class="price">
+						<a><font size="4.5px" color="red">$${product.price}</font> </a>
+						<div class="weightInLbs">
+							<a><b>Weight</b> ${product.weightInLbs} Lbs </a>
+
+						</div>
+					</div>
+				</td>
+			</tr> --%>
