@@ -52,7 +52,7 @@ section {
 	margin: auto 40px;
 	vertical-align: top;
 	text-align: center;
-	min-height: 550px;
+	min-height: 60em;
 	background-color: #FFF;
 	border-radius: 7px;	
 
@@ -68,5 +68,9 @@ section {
 .deets{
 	position:relative;
 	float: left;
-	
+	padding: 25px;
+	padding-bottom: 25px;
+}
+#tiles {
+	float:left;
 }
