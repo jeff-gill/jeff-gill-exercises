@@ -52,25 +52,65 @@ section {
 	margin: auto 40px;
 	vertical-align: top;
 	text-align: center;
-	min-height: 60em;
+	min-height: 80em;
 	background-color: #FFF;
-	border-radius: 7px;	
-
+	border-radius: 7px;
 }
+
+.container {
+    display: block;
+    position: relative;
+    text-align: left;
+    float: left;
+    width: 100%;
+}
+
 #text-box {
 	margin-right: -5px;
 	font-weight: 100;
 }
-.pix{
-	position:relative;
+
+.pix {
+	position: relative;
 	float: left;
 }
-.deets{
-	position:relative;
-	float: left;
-	padding: 25px;
-	padding-bottom: 25px;
+.item-containers {
+    border-bottom: 1px solid gray;
+    width: 100%;
 }
+.deets {
+    position: relative;
+    width: 10em;
+    padding: 25px;
+    margin-left: 200px;
+}
+#deets-rating {
+	padding-bottom: 50x;
+}
+
 #tiles {
-	float:left;
+	display: flex;
+	flex-wrap:wrap; 
+	position: relative;
+	float: left;
+	align-items: flex-end;
+}
+.tile-items {
+	flex-basis: 33%;	
+}
+
+#detail-container {
+	display: flex;
+	; 
+	position: relative;
+	float: left;
+	align-items: flex-end;
+	text-align: left;
+}
+#detail-pix {
+	flex-basis: 50%;
+}
+#detail-deets {
+	flex-basis: 50%;
+	
 }
