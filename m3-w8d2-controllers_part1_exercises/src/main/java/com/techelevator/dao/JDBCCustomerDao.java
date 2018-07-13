@@ -21,8 +21,22 @@ public class JDBCCustomerDao implements CustomerDao {
 
     @Autowired
     public JDBCCustomerDao(DataSource dataSource) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
+        setJdbcTemplate(new JdbcTemplate(dataSource));
     }
+
+	@Override
+	public List<Customer> searchAndSortCustomers(String search, String sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
 
     
 }

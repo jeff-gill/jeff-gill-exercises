@@ -9,6 +9,7 @@ public class Film {
     private int releaseYear;
     private int length;
     private String rating;
+    private String category;
 	/**
 	 * @return the title
 	 */
@@ -68,5 +69,13 @@ public class Film {
 	 */
 	public void setRating(String rating) {
 		this.rating = rating;
+	}
+	public String getCategory() {
+		return category;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+		
 	}
 }

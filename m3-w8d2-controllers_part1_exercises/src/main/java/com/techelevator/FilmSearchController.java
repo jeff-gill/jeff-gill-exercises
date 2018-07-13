@@ -17,12 +17,14 @@ public class FilmSearchController {
     @Autowired
     FilmDao filmDao;
 
+    @RequestMapping("/filmList")
     public String showFilmSearchForm() {
-        return null;
+        return "filmListSearch";
     }
 
+    @RequestMapping("/filmList")
     public String searchFilms() {
-        return null;
+        return "filmList";
     }
     
     

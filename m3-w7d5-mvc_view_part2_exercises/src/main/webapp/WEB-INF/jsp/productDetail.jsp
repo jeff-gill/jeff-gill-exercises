@@ -9,9 +9,9 @@
 
 		<div id="detail-pix">
 
-			<a> <img style="width: 400px" alt="toy-balls"
+		 <img style="width: 400px" alt="toy-balls"
 				src="img/${product.imageName}">
-			</a>
+		
 		</div>
 		<div id="detail-deets">
 			<div class="name-deets">
@@ -23,7 +23,7 @@
 						<c:otherwise>
 							<c:set var="bestSeller" value="" />
 						</c:otherwise>
-					</c:choose> <a><b><font size="2px" color="red">  ${bestSeller}</font></b></a>
+					</c:choose><b><font size="2px" color="red"> ${bestSeller}</font></b>
 				</a>
 			</div>
 			<div>
@@ -41,10 +41,15 @@
 			</div>
 			<div>
 				<b>Weight</b>${product.weightInLbs} Lbs
-			</div><br><br>
+			</div>
+			<br>
+			<br>
 			<div class="desc-deets">
 				<b>Description: </b>${product.description}
-			</div><br><br><br>
+			</div>
+			<br>
+			<br>
+			<br>
 
 		</div>
 	</div>

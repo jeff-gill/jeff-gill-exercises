@@ -45,6 +45,8 @@ public class JDBCFilmDao implements FilmDao {
         filmRow.setReleaseYear(results.getInt("release_year"));
         filmRow.setLength(results.getInt("length"));
         filmRow.setRating(results.getString("rating"));
+        filmRow.setCategory(results.getString("category"));
+        
         return filmRow;
 	}
     

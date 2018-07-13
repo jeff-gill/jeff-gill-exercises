@@ -17,14 +17,22 @@ public class ActorSearchController {
 	@Autowired
 	private ActorDao actorDao;
 
-	/* What request mapping do we want here */
+	@RequestMapping("/actorList")/* What request mapping do we want here */
 	public String showSearchActorForm() {
-		return null;
+		return "actorListSearch";
 	}
-
-	/* What about here? */
-	public String searchActors(/* What arguments go here to get parameters from the page? */) {
-		/* Call the model and pass values to the jsp */
-		return null;
-	}
+//
+//	@RequestMapping("/actorList")
+//	public String searchActors(/* What arguments go here to get parameters from the page? */) {
+//		/* Call the model and pass values to the jsp */
+//		return "actorList";
+//	}
+//
+//	public ActorDao getActorDao() {
+//		return actorDao;
+//	}
+//
+//	public void setActorDao(ActorDao actorDao) {
+//		this.actorDao = actorDao;
+//	}
 }

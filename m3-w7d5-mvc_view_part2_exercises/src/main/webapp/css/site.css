@@ -101,9 +101,8 @@ section {
 
 #detail-container {
 	display: flex;
-	; 
 	position: relative;
-	float: left;
+	/* float: left; */
 	align-items: flex-end;
 	text-align: left;
 }
