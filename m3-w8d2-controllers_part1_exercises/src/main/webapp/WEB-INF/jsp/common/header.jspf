@@ -23,6 +23,11 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+            <a href="http://localhost:8080/mvc-controllers-part1-exercises/actorList">Actor Search</a>
+            <a style="color: #222">---</a>
+            <a href="http://localhost:8080/mvc-controllers-part1-exercises/filmList">Film Search</a>
+            <a style="color: #222">---</a>
+            <a href="http://localhost:8080/mvc-controllers-part1-exercises/customerList">Customer Search</a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

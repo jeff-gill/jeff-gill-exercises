@@ -5,36 +5,49 @@
 <%@include file="common/header.jspf"%>
 
 
-
+<c:url var="formAction" value= "/searchFilmList" />
 <section>
+	
 <form method="GET" action="${formAction}">
 	<div class="filmContainer">
 		<div class="minLengthInput">
 			<input type="text" name="minLength" id="minLength"
-				placeholder="Search Minimum Length" />
+				placeholder="Min. Length in Mins" />
 		</div>
 
 		<div class="maxLengthInput">
 			<input type="text" name="maxLength" id="maxLength"
-				placeholder="Search Maximum Length" />
+				placeholder="Max. Length in Mins" />
 		</div>
-		<%-- <select name="genreChoice" value="${option}">
-					<option value="${filmRow.category}">${filmRow.category}</option>
-					
-				</select> --%>
+		<select name="categoryChoice">
+					<option value="Choose a Genre">Choose a Genre...</option>
+					<c:forEach items="${categories}" var="category">
+					<option value="${category}">${category}</option>
+					</c:forEach>
+				</select>
 		<input class="formSubmitButton" type="submit" value="Submit" />
 	</div>
 </form>
 
 <table class="table">
 	<tr>
-		<th>Name</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Release Year</th>
+		<th>Length (in mins)</th>
+		<th>Rating</th>
+
 	</tr>
-	<c:forEach items="${actors}" var="actor">
+	<c:forEach items="${films}" var="film">    <!-- TODO: cannot get <forEach> loop to activate -->
 		<tr>
-			<!-- What do we print here for each actor? -->
+			<td>${film.name}</td>
+			<td>${film.description}</td>
+			<td>${film.releaseYear}</td>
+			<td>${film.length}</td>
+			<td>${film.rating}</td>
 		</tr>
 	</c:forEach>
+	
 </table>
 </section>
 

@@ -4,13 +4,13 @@
 
 <%@include file="common/header.jspf"%>
 
-
+<c:url var="formAction" value= "/searchActorList" />
 <section>
 <form method="GET" action="${formAction}">
 	<div class="actorContainer">
 		<div class="lastNameInput">
 			<input type="text" name="lastName" id="lastName"
-				placeholder="Search Last Name" />
+				placeholder="Last name contains" />
 		</div>
 		<input class="formSubmitButton" type="submit" value="Submit" />
 	</div>
@@ -20,9 +20,9 @@
 	<tr>
 		<th>Name</th>
 	</tr>
-	<c:forEach items="${actorsList}" var="actor">
+	<c:forEach items="${actors}" var="actor">
 		<tr>
-			<td>${filmRow.firstName} ${filmRow.lastName}</td>
+			<td>${actor.firstName} ${actor.lastName}</td>
 		</tr>
 	</c:forEach>
 </table>
