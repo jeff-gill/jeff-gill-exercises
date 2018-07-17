@@ -2,6 +2,7 @@ package com.techelevator;
 
 import com.techelevator.dao.CustomerDao;
 import com.techelevator.dao.model.Actor;
+import com.techelevator.dao.model.Customer;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class CustomerSearchController {
 		String requestCustomerEmail = customerRequest.getParameter("email");
 		String requestCustomerActive = customerRequest.getParameter("active");
 		
-		List<Actor> customerSearchList = customerDao.getMatchingCustomers(requestCustomerLastName, requestCustomerEmail, requestCustomerActive);
+		List<Customer> customerSearchList = customerDao.searchAndSortCustomers(requestCustomerLastName, requestCustomerEmail, requestCustomerActive);
 		customerRequest.setAttribute("customers", customerSearchList);
 		return "customerList";
 	}

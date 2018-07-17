@@ -8,5 +8,7 @@ import java.util.List;
  * CustomerDao
  */
 public interface CustomerDao {
-    public List<Customer> searchAndSortCustomers(String search, String sort);
+    public List<Customer> searchAndSortCustomers(String search, String sort, String requestCustomerActive);
+
+	List<Customer> searchAndSortCustomers(String search, String sort);
 }

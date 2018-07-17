@@ -50,6 +50,12 @@ public class JDBCCustomerDao implements CustomerDao {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	@Override
+	public List<Customer> searchAndSortCustomers(String search, String sort, String requestCustomerActive) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
     

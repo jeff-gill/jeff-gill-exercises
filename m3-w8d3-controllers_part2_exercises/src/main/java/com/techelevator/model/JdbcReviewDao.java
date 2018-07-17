@@ -58,4 +58,11 @@ public class JdbcReviewDao implements ReviewDao {
 		return id;
 	}
 
+	@Override
+	public List<Review> getAllReviews(String userName, String userRating, String userReviewTitle,
+			String userReviewBody) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
