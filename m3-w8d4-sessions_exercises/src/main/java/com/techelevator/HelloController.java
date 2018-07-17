@@ -9,9 +9,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller 
 public class HelloController {
 
-	@RequestMapping("/greeting")
-	public String displayGreeting() {
+	@RequestMapping("/page1")
+	public String displayColor() {
 		
-		return "greeting";
+		return "page1";
+	}
+	@RequestMapping("/page2")
+	public String displayFood() {
+		
+		return "page2";
+	}
+	@RequestMapping("/page3")
+	public String displaySeason() {
+		
+		return "page3";
+	}
+	@RequestMapping("/summary")
+	public String displaySummary() {
+		
+		return "summary";
 	}
 }
