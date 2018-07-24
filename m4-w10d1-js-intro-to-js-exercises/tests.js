@@ -122,8 +122,11 @@ QUnit.test("Reverse Array", function (assert) {
 
 });
 
+QUnit.test("Black Jack", function (assert) {
 
-
-
-
+    assert.deepEqual(blackJack(19, 20), 20);
+    assert.deepEqual(blackJack(16, 15), 16);
+    assert.deepEqual(blackJack(22, 20), 20);
+    assert.deepEqual(blackJack(22, 22), 0);
+});
 
