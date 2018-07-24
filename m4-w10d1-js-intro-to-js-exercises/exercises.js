@@ -86,13 +86,19 @@ for (var i = 0; i < myArray.length; i++) {
 return myArray;
 }
 
-function weave () {
-    var arr1 = [0, 1, 2];
-    var arr2 = [3, 5, 7];
-    var primes=[];
-    var primes = arr1.concat(arr2);
+function weave (x, y) {
+var arraySize = (x.length + y.length)
+    var array3 = [];
+    for (var i=0; i< arraySize; i++) {
+     if (x.length >  0) {
+        array3.push(x.shift());
+    }
+    if (y.length >  0) {
+         array3.push(y.shift());
+    }
 }
-
+    return array3;
+}
 
 function cigarParty (x, y) {
    
@@ -105,9 +111,14 @@ function cigarParty (x, y) {
     return false;
 }
 
-// function stringSplosion (x) {
-
-// }
+function stringSplosion(x){
+    var string_array = [];
+    for(var i = 1; i <= x.length; i++){
+      var string_out = x.substr(0, i);
+      string_array.push(string_out);
+    }
+    return string_array.join('');
+  }
 
 function fizzBuzz (x) {
     if (x % 3 == 0  && x % 5 == 0) {
@@ -126,9 +137,14 @@ return x;
 
 // }
 
-//function reverseArray (x) {
-
-// }
+function reverseArray (x) {
+    var myArray = [];
+    while(x.length >0){
+            myArray.push(x.pop());
+            
+      }
+      return myArray;
+}
 
 function blackJack (x, y) {
     if((21 - x) < 0 && (21 - y) < 0) {
