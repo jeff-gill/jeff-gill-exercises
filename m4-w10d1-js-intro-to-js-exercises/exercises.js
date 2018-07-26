@@ -133,9 +133,17 @@ function fizzBuzz (x) {
 return x;
 }
 
-// function countValues (x) {
-
-// }
+function countValues(array) {
+    result = {};
+    var x;
+    for (x of array) {
+        if (result[x] !== undefined) {
+            result[x] = result[x] + 1;
+        } else {
+            result[x] = 1;
+        }
+    } return result;
+}
 
 function reverseArray (x) {
     var myArray = [];

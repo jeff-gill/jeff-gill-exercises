@@ -21,25 +21,26 @@ function democratPresidents() {
 
 //Locate all Federalist presidents and add the 'gold' class.
 function otherPresidents() {
-	$("#presidents :not(.Republican, .Democratic, .Democratic-Republican)").addClass("gold");
+	$("#presidents").children("div").not(".Republican, .Democratic").addClass("gold");
 }
 
 //Locate all presidents named 'James' and add the 'james' class.
 function presidentsNamedJames() {
-	$(div["id*='james']").addClass("james");
+	$("#presidents").children("div:contains('James')").addClass("james");
 }
 
 //Locate each president serving at the beginning of each century and add the 'beginningOfCentury' class.
 function turnOfTheCenturyPresidents() {
-
+	$("#presidents").children("h2").next().addClass("beginningOfCentury");
 }
 
 //Locate each president serving at the end of the century and add the 'endOfCentury' class.
 function endOfTheCenturyPresidents() {
-    
+	  $('#presidents').children('h2').prev().addClass('endOfCentury');
+		$('#presidents').children(':last-child').addClass('endOfCentury');
 }
-
+		
 //Locate all presidents serving in the 1900s who appear on currency and add the 'appearOnCurrency' class.
 function currencyPresidents() {
-
+	$('#presidents').children("h2:contains('1900')").nextUntil("h2:contains('2000')").filter('.currency').addClass('appearOnCurrency');
 }
