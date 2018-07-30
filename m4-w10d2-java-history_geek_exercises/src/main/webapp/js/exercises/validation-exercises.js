@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         rules: {
             email: {
-                required: true,x
+                required: true,
             },
             password: {
                 required: true,
