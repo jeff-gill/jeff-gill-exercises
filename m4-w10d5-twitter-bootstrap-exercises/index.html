@@ -1,130 +1,317 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8">
-      <title>Tech Elevator</title>
-      <!-- Main Style Sheet
-      <link rel="stylesheet" href="css/main.css">
-       -->
-      <!-- Respond.js for IE 8 or less only -->
-      <!--[if (lt IE 9) & (!IEMobile)]>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <title>Tech Elevator</title>
+  <!-- Main Style Sheet-->
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- Respond.js for IE 8 or less only -->
+  <!--[if (lt IE 9) & (!IEMobile)]>
         <script src="js/vendor/respond.min.js"></script>
       <![endif]-->
-    </head>
-    <body>
-      <header>
-        <img src="img/te_logo.png" alt="Tech Elevator" width="120">
-        <ul>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#signup">Sign Up</a></li>
-        </ul>
-      </header>
+</head>
 
-      <h1>Big Welcome Message</h1>
-      <p>Ingenious marketing copy. And some more ingenious marketing copy.<a href="#features">Learn more</a></p>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img id="headerPic" src="img/te_logo.png" alt="Tech Elevator" width="120">
+        </div>
+        <div class="col-md-1">
+          <a class="navBarText" href="#welcome">Welcome</a>
+        </div>
+        <div class="col-md-1">
+          <a class="navBarText" href="#features">Features</a>
+        </div>
+        <div class="col-md-1">
+          <a class="navBarText" href="#impact">Impact</a>
+        </div>
+        <div class="col-md-1">
+          <a class="navBarText" href="#signup">Sign Up</a>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+  </header>
+  <div class="jumbotron" id="theJumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7" id="jumbotron">
+          <h1 id="bigWelcome">Big Welcome Message</h1>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <a id="ingeniousCopy">Ingenious marketing copy. And some more ingenious marketing copy.</a>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+          <a class="btn btn-lg btn-primary" role="button">Learn More
+            <i class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
 
-      <!-- FEATURES SECTION -->
-      <section id="features">
-        <h1>Features</h1>
-        <h2>Feature 1</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 2</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 3</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-        <h2>Feature 4</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 5</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 6</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-      </section><!-- /.row -->
 
-      <!-- IMPACT SECTION -->
-      <section id="impact">
-        <h1>Impact</h1>
-        <img src="img/photo_one.jpg" alt="Photo One">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_two.jpg" alt="Photo Two">
-        <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_three.jpg" alt="Photo Three">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p></blockquote>
-        <img src="img/photo_four.jpg" alt="Photo Four">
-        <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_five.jpg" alt="Photo Five">
-        <blockquote ><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_six.jpg" alt="Photo Six">
-        <blockquote><p>Lorem ipsum dolor sit amet elit.</p></blockquote>
-        <img src="img/photo_seven.jpg" alt="Photo Seven">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-      </section><!-- /#impact -->
+  <!-- FEATURES SECTION -->
+  <section id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <h2>Features</h2>
+        </div>
+        <div class="col-md-10"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-cloud" id="icons" aria-hidden="true"></span>
+          <h2 id="feature">Feature 1</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
 
-      <!-- SIGNUP SECTION -->
-      <section id="signup">
+        </div>
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-user" id="icons" aria-hidden="true"></span>
+          <h2 id="feature">Feature 2</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+        </div>
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-comment" id="icons" aria-hidden="true"></span>
+          <h2 id="feature">Feature 3</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="featureContainer"> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-leaf" id="icons" aria-hidden="true"></span>
+          <h2>Feature 4</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+
+        </div>
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-save" id="icons" aria-hidden="true"></span>
+          <h2>Feature 5</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+        </div>
+        <div class="col-md-4" id="featureContainer">
+          <span class="glyphicon glyphicon-cd" id="icons" aria-hidden="true"></span>
+          <h2>Feature 6</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- /.row -->
+
+  <!-- IMPACT SECTION -->
+  <section id="impact ">
+    <div class="container">
+      <div class="row" id="classRow">
+        <div class="col-md-2">
+          <h1>Impact</h1>
+
+          <div class="col-md-10"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_one.jpg " alt="Photo One ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_two.jpg " alt="Photo Two ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_three.jpg " alt="Photo Three ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="classRow">
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_four.jpg " alt="Photo Four ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_five.jpg " alt="Photo Five ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img id="classPhoto" src="img/photo_six.jpg " alt="Photo Six ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet elit.</p>
+          </div>
+          </a>
+          <img id="classPhoto" src="img/photo_seven.jpg " alt="Photo Seven ">
+          <div id="caption">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="signup ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
           <h1>Sign up now!</h1>
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    <h2>Basic Plan</h2>
-                    <div>$19</div>
-                  </th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
-              </tfoot>
-              <tbody>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    <h2>Premium Plan</h2>
-                    <div>$29</div>
-                  </th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
-              </tfoot>
-              <tbody>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    <h2>Pro Plan</h2>
-                    <div>$39</div>
-                  </th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
-              </tfoot>
-              <tbody>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-                <tr><td>Feature</td><td>Name</td></tr>
-              </tbody>
-            </table>
-      </section><!-- /#signup -->
-
+        </div>
+        <div class="col-md-9"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="basic">
+          <table>
+            <thead>
+              <tr>
+                <th id="basicTop">
+                  <h2>BASIC PLAN</h2>
+                  <div id="price">$19</div>
+                </th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr class="signUpBasic">
+                <td>
+                  <a href="# ">Sign up now!</a>
+                </td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4" id="premium">
+          <table>
+            <thead>
+              <tr>
+                <th id="premiumTop">
+                  <h2>PREMIUM PLAN</h2>
+                  <div id="price">$29</div>
+                </th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr class="signUpPremium">
+                <td>
+                  <a href="# ">Sign up now!</a>
+                </td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4" id="pro">
+          <table>
+            <thead>
+              <tr>
+                <th id="proTop">
+                  <h2>PRO PLAN</h2>
+                  <div id="price">$39</div>
+                </th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr class="signUpPro">
+                <td id="signUp"> 
+                  <a href="# ">Sign up now!</a>
+                </td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+              <tr>
+                <td>Feature</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td id="featureGray">Feature</td>
+                <td id="nameGray">Name</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
