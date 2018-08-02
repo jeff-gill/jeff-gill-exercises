@@ -22,7 +22,7 @@ public class ElevatorTest {
 
 	@Test
 	public void test_get_number_of_levels() {
-		Assert.assertEquals(4,elevator1.get`());
+		Assert.assertEquals(4,elevator1.getNumberOfLevels());
 	}
 
 	@Test
